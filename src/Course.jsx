@@ -1,16 +1,16 @@
 import './output.css'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faComputer } from '@fortawesome/free-solid-svg-icons'
-export default function Course(){
-
-
+import { faPen } from '@fortawesome/free-solid-svg-icons'
+export default function Course(props){
 
     return (
-        <div className='border-2 px-8 py-4 rounded-lg'>
-            <h3>Math 101</h3>
+        <div className='border-2 px-8 py-4 rounded-lg w-36'>
+            <h3>{props.courseName}</h3>
             <div className="flex justify-between items-center ">
-                <h3>3</h3>
-                <FontAwesomeIcon icon={faComputer} />
+                <h3>{props.creditHours}</h3>
+                {props.hasLab &&  <FontAwesomeIcon icon={faComputer} />}
+                {props.hasRecitation &&<FontAwesomeIcon icon={faPen} />}
             </div>
         </div>
     )

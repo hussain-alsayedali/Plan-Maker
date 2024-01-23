@@ -4,6 +4,8 @@ import viteLogo from '/vite.svg'
 import './App.css'
 import './output.css'
 import Course from './Course'
+import Term from './Term'
+import Year from './Year'
 
 function App() {
   const [count, setCount] = useState(0)
@@ -11,7 +13,14 @@ function App() {
   return (
     
     <>
-      <Course/> 
+    <div className='flex justify-center'>
+      <Year/>
+      <Year/> 
+      <Year/> 
+      <Year/> 
+    </div>
+
+
 
     </>
   )
