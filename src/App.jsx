@@ -6,6 +6,8 @@ import './output.css'
 import Course from './Course'
 import Term from './Term'
 import Year from './Year'
+import ColorBlock from "./ColorBlock"
+import ColorPalette from "./ColorPalette"
 
 function App() {
   const [count, setCount] = useState(0)
@@ -18,6 +20,8 @@ function App() {
       <Year/> 
       <Year/> 
       <Year/> 
+      <ColorBlock />
+      <ColorPalette/>
     </div>
 
 
