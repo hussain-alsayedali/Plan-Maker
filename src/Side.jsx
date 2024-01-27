@@ -1,13 +1,10 @@
-import './output.css'
+import "./output.css";
+import ColorPalette from "./ColorPalette";
 
-
-export default function Side(){
-
-    const Colors = []
-
-    return(
-        <div>
-            
-        </div>
-    )
+export default function Side() {
+  return (
+    <aside className="">
+      <ColorPalette />
+    </aside>
+  );
 }

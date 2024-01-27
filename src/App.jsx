@@ -8,20 +8,17 @@ import Term from "./Term";
 import Year from "./Year";
 import ColorBlock from "./ColorBlock";
 import ColorPalette from "./ColorPalette";
+import Side from "./Side";
+import Plan from "./Plan";
 
 function App() {
   const [count, setCount] = useState(0);
 
   return (
-    <>
-      <div className="flex justify-center">
-        {/* <Year/>
-      <Year/> 
-      <Year/> 
-      <Year/>  */}
-        <ColorPalette />
-      </div>
-    </>
+    <div className="flex ">
+      <Plan />
+      <Side />
+    </div>
   );
 }
 

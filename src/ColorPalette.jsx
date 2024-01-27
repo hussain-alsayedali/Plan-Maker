@@ -23,11 +23,11 @@ export default function ColorPalette() {
       <h3>
         Select <FontAwesomeIcon icon={faPalette} />
       </h3>
-      <div className="grid grid-cols-4 gap-4">
+      <div className="grid grid-cols-4 gap-4 w-52">
         <h4></h4>
         <h3>Term 1</h3>
         <h3>Term 2</h3>
-        <h3>Term 3</h3>
+        <h3>Summer</h3>
         <h3>year 1</h3>
         <ColorBlock hours={3} bgColor={colors[0][0]} />
         <ColorBlock hours={3} bgColor={colors[0][1]} />
