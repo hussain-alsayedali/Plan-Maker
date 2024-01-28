@@ -3,7 +3,8 @@ import Term from "./Term"
 
 
 export default function Year(props){
-
+ 
+    // let terms = props.plannedTerms.map( x => {<Term/>})
 
     return(
         <div>
