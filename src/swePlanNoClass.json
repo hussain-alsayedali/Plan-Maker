@@ -45,7 +45,7 @@
          "credits": 4,
          "department": "Physics Department",
          "hasRecaitaiton": true,
-         "hasLab": false,
+         "hasLab": true,
          "Prerequisites": null,
          "preStanding": null,
          "teachers": null
@@ -130,7 +130,7 @@
          "credits": 4,
          "department": "Physics Department",
          "hasRecaitaiton": true,
-         "hasLab": false,
+         "hasLab": true,
          "Prerequisites": [
             {
                "name": "Phys 101",
