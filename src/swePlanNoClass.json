@@ -1,0 +1,1214 @@
+[
+   [
+      {
+         "name": "Math 101",
+         "credits": 4,
+         "department": "Math Department",
+         "hasRecaitaiton": true,
+         "hasLab": false,
+         "Prerequisites": null,
+         "preStanding": null,
+         "teachers": null
+      },
+      {
+         "name": "Eng 101",
+         "credits": 3,
+         "department": "English Department",
+         "hasRecaitaiton": false,
+         "hasLab": false,
+         "Prerequisites": null,
+         "preStanding": null,
+         "teachers": null
+      },
+      {
+         "name": "PE 101",
+         "credits": 1,
+         "department": "Physical Education Department",
+         "hasRecaitaiton": false,
+         "hasLab": false,
+         "Prerequisites": null,
+         "preStanding": null,
+         "teachers": null
+      },
+      {
+         "name": "ICS 104",
+         "credits": 3,
+         "department": "Information and Computer Science Department",
+         "hasRecaitaiton": false,
+         "hasLab": true,
+         "Prerequisites": null,
+         "preStanding": null,
+         "teachers": null
+      },
+      {
+         "name": "Phys 101",
+         "credits": 4,
+         "department": "Physics Department",
+         "hasRecaitaiton": true,
+         "hasLab": false,
+         "Prerequisites": null,
+         "preStanding": null,
+         "teachers": null
+      },
+      {
+         "name": "IAS 111",
+         "credits": 2,
+         "department": "Islamic and Arabic Department",
+         "hasRecaitaiton": false,
+         "hasLab": false,
+         "Prerequisites": null,
+         "preStanding": null,
+         "teachers": null
+      }
+   ],
+   [
+      {
+         "name": "Math 102",
+         "credits": 4,
+         "department": "Math Department",
+         "hasRecaitaiton": true,
+         "hasLab": false,
+         "Prerequisites": [
+            {
+               "name": "Math 101",
+               "credits": 4,
+               "department": "Math Department",
+               "hasRecaitaiton": true,
+               "hasLab": false,
+               "Prerequisites": null,
+               "preStanding": null,
+               "teachers": null
+            }
+         ],
+         "preStanding": null,
+         "teachers": null
+      },
+      {
+         "name": "Eng 102",
+         "credits": 3,
+         "department": "English Department",
+         "hasRecaitaiton": false,
+         "hasLab": false,
+         "Prerequisites": [
+            {
+               "name": "Eng 101",
+               "credits": 3,
+               "department": "English Department",
+               "hasRecaitaiton": false,
+               "hasLab": false,
+               "Prerequisites": null,
+               "preStanding": null,
+               "teachers": null
+            }
+         ],
+         "preStanding": null,
+         "teachers": null
+      },
+      {
+         "name": "ICS 108",
+         "credits": 4,
+         "department": "Information and Computer Science Department",
+         "hasRecaitaiton": false,
+         "hasLab": true,
+         "Prerequisites": [
+            {
+               "name": "ICS 104",
+               "credits": 3,
+               "department": "Information and Computer Science Department",
+               "hasRecaitaiton": false,
+               "hasLab": true,
+               "Prerequisites": null,
+               "preStanding": null,
+               "teachers": null
+            }
+         ],
+         "preStanding": null,
+         "teachers": null
+      },
+      {
+         "name": "Phys 102",
+         "credits": 4,
+         "department": "Physics Department",
+         "hasRecaitaiton": true,
+         "hasLab": false,
+         "Prerequisites": [
+            {
+               "name": "Phys 101",
+               "credits": 4,
+               "department": "Physics Department",
+               "hasRecaitaiton": true,
+               "hasLab": false,
+               "Prerequisites": null,
+               "preStanding": null,
+               "teachers": null
+            }
+         ],
+         "preStanding": null,
+         "teachers": null
+      },
+      {
+         "name": "IAS 121",
+         "credits": 2,
+         "department": "Islamic and Arabic Department",
+         "hasRecaitaiton": false,
+         "hasLab": false,
+         "Prerequisites": null,
+         "preStanding": null,
+         "teachers": null
+      }
+   ],
+   [
+      {
+         "name": "Math 201",
+         "credits": 4,
+         "department": "Math Department",
+         "hasRecaitaiton": false,
+         "hasLab": false,
+         "Prerequisites": [
+            {
+               "name": "Math 102",
+               "credits": 4,
+               "department": "Math Department",
+               "hasRecaitaiton": true,
+               "hasLab": false,
+               "Prerequisites": [
+                  {
+                     "name": "Math 101",
+                     "credits": 4,
+                     "department": "Math Department",
+                     "hasRecaitaiton": true,
+                     "hasLab": false,
+                     "Prerequisites": null,
+                     "preStanding": null,
+                     "teachers": null
+                  }
+               ],
+               "preStanding": null,
+               "teachers": null
+            }
+         ],
+         "preStanding": null,
+         "teachers": null
+      },
+      {
+         "name": "ISE 291",
+         "credits": 3,
+         "department": "Industrail and System Engineering Department",
+         "hasRecaitaiton": false,
+         "hasLab": false,
+         "Prerequisites": null,
+         "preStanding": null,
+         "teachers": null
+      },
+      {
+         "name": "SWE 206",
+         "credits": 3,
+         "department": "Software Engineering Department",
+         "hasRecaitaiton": false,
+         "hasLab": true,
+         "Prerequisites": [
+            {
+               "name": "ICS 108",
+               "credits": 4,
+               "department": "Information and Computer Science Department",
+               "hasRecaitaiton": false,
+               "hasLab": true,
+               "Prerequisites": [
+                  {
+                     "name": "ICS 104",
+                     "credits": 3,
+                     "department": "Information and Computer Science Department",
+                     "hasRecaitaiton": false,
+                     "hasLab": true,
+                     "Prerequisites": null,
+                     "preStanding": null,
+                     "teachers": null
+                  }
+               ],
+               "preStanding": null,
+               "teachers": null
+            }
+         ],
+         "preStanding": null,
+         "teachers": null
+      },
+      {
+         "name": "ICS 202",
+         "credits": 4,
+         "department": "Information and Computer Science Department",
+         "hasRecaitaiton": false,
+         "hasLab": true,
+         "Prerequisites": [
+            {
+               "name": "ICS 108",
+               "credits": 4,
+               "department": "Information and Computer Science Department",
+               "hasRecaitaiton": false,
+               "hasLab": true,
+               "Prerequisites": [
+                  {
+                     "name": "ICS 104",
+                     "credits": 3,
+                     "department": "Information and Computer Science Department",
+                     "hasRecaitaiton": false,
+                     "hasLab": true,
+                     "Prerequisites": null,
+                     "preStanding": null,
+                     "teachers": null
+                  }
+               ],
+               "preStanding": null,
+               "teachers": null
+            }
+         ],
+         "preStanding": null,
+         "teachers": null
+      },
+      {
+         "name": "Chem 101",
+         "credits": 4,
+         "department": "Chemical Department",
+         "hasRecaitaiton": true,
+         "hasLab": false,
+         "Prerequisites": null,
+         "preStanding": null,
+         "teachers": null
+      },
+      {
+         "name": "IAS 212",
+         "credits": 2,
+         "department": "Islamic and Arabic Department",
+         "hasRecaitaiton": false,
+         "hasLab": false,
+         "Prerequisites": null,
+         "preStanding": null,
+         "teachers": null
+      }
+   ],
+   [
+      {
+         "name": "Math 208",
+         "credits": 4,
+         "department": "Math Department",
+         "hasRecaitaiton": false,
+         "hasLab": false,
+         "Prerequisites": [
+            {
+               "name": "Math 102",
+               "credits": 4,
+               "department": "Math Department",
+               "hasRecaitaiton": true,
+               "hasLab": false,
+               "Prerequisites": [
+                  {
+                     "name": "Math 101",
+                     "credits": 4,
+                     "department": "Math Department",
+                     "hasRecaitaiton": true,
+                     "hasLab": false,
+                     "Prerequisites": null,
+                     "preStanding": null,
+                     "teachers": null
+                  }
+               ],
+               "preStanding": null,
+               "teachers": null
+            }
+         ],
+         "preStanding": null,
+         "teachers": null
+      },
+      {
+         "name": "COE 292",
+         "credits": 3,
+         "department": "Computer Engineering Department",
+         "hasRecaitaiton": false,
+         "hasLab": [
+            {
+               "name": "ISE 291",
+               "credits": 3,
+               "department": "Industrail and System Engineering Department",
+               "hasRecaitaiton": false,
+               "hasLab": false,
+               "Prerequisites": null,
+               "preStanding": null,
+               "teachers": null
+            }
+         ],
+         "Prerequisites": null,
+         "preStanding": null,
+         "teachers": null
+      },
+      {
+         "name": "SWE 216",
+         "credits": 3,
+         "department": "Software Engineering Department",
+         "hasRecaitaiton": false,
+         "hasLab": false,
+         "Prerequisites": [
+            {
+               "name": "SWE 206",
+               "credits": 3,
+               "department": "Software Engineering Department",
+               "hasRecaitaiton": false,
+               "hasLab": true,
+               "Prerequisites": [
+                  {
+                     "name": "ICS 108",
+                     "credits": 4,
+                     "department": "Information and Computer Science Department",
+                     "hasRecaitaiton": false,
+                     "hasLab": true,
+                     "Prerequisites": [
+                        {
+                           "name": "ICS 104",
+                           "credits": 3,
+                           "department": "Information and Computer Science Department",
+                           "hasRecaitaiton": false,
+                           "hasLab": true,
+                           "Prerequisites": null,
+                           "preStanding": null,
+                           "teachers": null
+                        }
+                     ],
+                     "preStanding": null,
+                     "teachers": null
+                  }
+               ],
+               "preStanding": null,
+               "teachers": null
+            }
+         ],
+         "preStanding": null,
+         "teachers": null
+      },
+      {
+         "name": "ICS 202",
+         "credits": 3,
+         "department": "Information and Computer Science Department",
+         "hasRecaitaiton": false,
+         "hasLab": false,
+         "Prerequisites": [
+            {
+               "name": "ICS 104",
+               "credits": 3,
+               "department": "Information and Computer Science Department",
+               "hasRecaitaiton": false,
+               "hasLab": true,
+               "Prerequisites": null,
+               "preStanding": null,
+               "teachers": null
+            }
+         ],
+         "preStanding": null,
+         "teachers": null
+      },
+      {
+         "name": "COE 233",
+         "credits": 3,
+         "department": "Computer Engineering Department",
+         "hasRecaitaiton": false,
+         "hasLab": false,
+         "Prerequisites": [
+            {
+               "name": "ICS 104",
+               "credits": 3,
+               "department": "Information and Computer Science Department",
+               "hasRecaitaiton": false,
+               "hasLab": true,
+               "Prerequisites": null,
+               "preStanding": null,
+               "teachers": null
+            }
+         ],
+         "preStanding": null,
+         "teachers": null
+      }
+   ],
+   [
+      {
+         "name": "Stat 319",
+         "credits": 3,
+         "department": "Math Department",
+         "hasRecaitaiton": false,
+         "hasLab": true,
+         "Prerequisites": [
+            {
+               "name": "Math 102",
+               "credits": 4,
+               "department": "Math Department",
+               "hasRecaitaiton": true,
+               "hasLab": false,
+               "Prerequisites": [
+                  {
+                     "name": "Math 101",
+                     "credits": 4,
+                     "department": "Math Department",
+                     "hasRecaitaiton": true,
+                     "hasLab": false,
+                     "Prerequisites": null,
+                     "preStanding": null,
+                     "teachers": null
+                  }
+               ],
+               "preStanding": null,
+               "teachers": null
+            }
+         ],
+         "preStanding": null,
+         "teachers": null
+      },
+      {
+         "name": "SWE 316",
+         "credits": 3,
+         "department": "Software Engineering Department",
+         "hasRecaitaiton": false,
+         "hasLab": false,
+         "Prerequisites": [
+            {
+               "name": "SWE 206",
+               "credits": 3,
+               "department": "Software Engineering Department",
+               "hasRecaitaiton": false,
+               "hasLab": true,
+               "Prerequisites": [
+                  {
+                     "name": "ICS 108",
+                     "credits": 4,
+                     "department": "Information and Computer Science Department",
+                     "hasRecaitaiton": false,
+                     "hasLab": true,
+                     "Prerequisites": [
+                        {
+                           "name": "ICS 104",
+                           "credits": 3,
+                           "department": "Information and Computer Science Department",
+                           "hasRecaitaiton": false,
+                           "hasLab": true,
+                           "Prerequisites": null,
+                           "preStanding": null,
+                           "teachers": null
+                        }
+                     ],
+                     "preStanding": null,
+                     "teachers": null
+                  }
+               ],
+               "preStanding": null,
+               "teachers": null
+            }
+         ],
+         "preStanding": null,
+         "teachers": null
+      },
+      {
+         "name": "ICS 321",
+         "credits": 3,
+         "department": "Information and Computer Science Department",
+         "hasRecaitaiton": false,
+         "hasLab": false,
+         "Prerequisites": [
+            {
+               "name": "ICS 202",
+               "credits": 4,
+               "department": "Information and Computer Science Department",
+               "hasRecaitaiton": false,
+               "hasLab": true,
+               "Prerequisites": [
+                  {
+                     "name": "ICS 108",
+                     "credits": 4,
+                     "department": "Information and Computer Science Department",
+                     "hasRecaitaiton": false,
+                     "hasLab": true,
+                     "Prerequisites": [
+                        {
+                           "name": "ICS 104",
+                           "credits": 3,
+                           "department": "Information and Computer Science Department",
+                           "hasRecaitaiton": false,
+                           "hasLab": true,
+                           "Prerequisites": null,
+                           "preStanding": null,
+                           "teachers": null
+                        }
+                     ],
+                     "preStanding": null,
+                     "teachers": null
+                  }
+               ],
+               "preStanding": null,
+               "teachers": null
+            }
+         ],
+         "preStanding": null,
+         "teachers": null
+      },
+      {
+         "name": "ICS 343",
+         "credits": 4,
+         "department": "Information and Computer Science Department",
+         "hasRecaitaiton": false,
+         "hasLab": true,
+         "Prerequisites": [
+            {
+               "name": "ICS 108",
+               "credits": 4,
+               "department": "Information and Computer Science Department",
+               "hasRecaitaiton": false,
+               "hasLab": true,
+               "Prerequisites": [
+                  {
+                     "name": "ICS 104",
+                     "credits": 3,
+                     "department": "Information and Computer Science Department",
+                     "hasRecaitaiton": false,
+                     "hasLab": true,
+                     "Prerequisites": null,
+                     "preStanding": null,
+                     "teachers": null
+                  }
+               ],
+               "preStanding": null,
+               "teachers": null
+            }
+         ],
+         "preStanding": null,
+         "teachers": null
+      },
+      {
+         "name": "SWE 387",
+         "credits": 3,
+         "department": "Software Engineering Department",
+         "hasRecaitaiton": false,
+         "hasLab": false,
+         "Prerequisites": null,
+         "preStanding": "junior",
+         "teachers": null
+      },
+      {
+         "name": "BUS 200",
+         "credits": 3,
+         "department": "Business School",
+         "hasRecaitaiton": false,
+         "hasLab": false,
+         "Prerequisites": null,
+         "preStanding": null,
+         "teachers": null
+      }
+   ],
+   [
+      {
+         "name": "SWE 363",
+         "credits": 3,
+         "department": "Software Engineering Department",
+         "hasRecaitaiton": false,
+         "hasLab": false,
+         "Prerequisites": null,
+         "preStanding": "junior",
+         "teachers": null
+      },
+      {
+         "name": "Eng 214",
+         "credits": 3,
+         "department": "English Department",
+         "hasRecaitaiton": false,
+         "hasLab": false,
+         "Prerequisites": [
+            {
+               "name": "Eng 102",
+               "credits": 3,
+               "department": "English Department",
+               "hasRecaitaiton": false,
+               "hasLab": false,
+               "Prerequisites": [
+                  {
+                     "name": "Eng 101",
+                     "credits": 3,
+                     "department": "English Department",
+                     "hasRecaitaiton": false,
+                     "hasLab": false,
+                     "Prerequisites": null,
+                     "preStanding": null,
+                     "teachers": null
+                  }
+               ],
+               "preStanding": null,
+               "teachers": null
+            }
+         ],
+         "preStanding": null,
+         "teachers": null
+      },
+      {
+         "name": "SWE 326",
+         "credits": 3,
+         "department": "Software Engineering Department",
+         "hasRecaitaiton": false,
+         "hasLab": false,
+         "Prerequisites": [
+            {
+               "name": "SWE 216",
+               "credits": 3,
+               "department": "Software Engineering Department",
+               "hasRecaitaiton": false,
+               "hasLab": false,
+               "Prerequisites": [
+                  {
+                     "name": "SWE 206",
+                     "credits": 3,
+                     "department": "Software Engineering Department",
+                     "hasRecaitaiton": false,
+                     "hasLab": true,
+                     "Prerequisites": [
+                        {
+                           "name": "ICS 108",
+                           "credits": 4,
+                           "department": "Information and Computer Science Department",
+                           "hasRecaitaiton": false,
+                           "hasLab": true,
+                           "Prerequisites": [
+                              {
+                                 "name": "ICS 104",
+                                 "credits": 3,
+                                 "department": "Information and Computer Science Department",
+                                 "hasRecaitaiton": false,
+                                 "hasLab": true,
+                                 "Prerequisites": null,
+                                 "preStanding": null,
+                                 "teachers": null
+                              }
+                           ],
+                           "preStanding": null,
+                           "teachers": null
+                        }
+                     ],
+                     "preStanding": null,
+                     "teachers": null
+                  }
+               ],
+               "preStanding": null,
+               "teachers": null
+            }
+         ],
+         "preStanding": null,
+         "teachers": null
+      },
+      {
+         "name": "ICS 344",
+         "credits": 3,
+         "department": "Information and Computer Science Department",
+         "hasRecaitaiton": false,
+         "hasLab": false,
+         "Prerequisites": [
+            {
+               "name": "ICS 343",
+               "credits": 4,
+               "department": "Information and Computer Science Department",
+               "hasRecaitaiton": false,
+               "hasLab": true,
+               "Prerequisites": [
+                  {
+                     "name": "ICS 108",
+                     "credits": 4,
+                     "department": "Information and Computer Science Department",
+                     "hasRecaitaiton": false,
+                     "hasLab": true,
+                     "Prerequisites": [
+                        {
+                           "name": "ICS 104",
+                           "credits": 3,
+                           "department": "Information and Computer Science Department",
+                           "hasRecaitaiton": false,
+                           "hasLab": true,
+                           "Prerequisites": null,
+                           "preStanding": null,
+                           "teachers": null
+                        }
+                     ],
+                     "preStanding": null,
+                     "teachers": null
+                  }
+               ],
+               "preStanding": null,
+               "teachers": null
+            }
+         ],
+         "preStanding": null,
+         "teachers": null
+      },
+      {
+         "name": "CGS 392",
+         "credits": 1,
+         "department": "English Department",
+         "hasRecaitaiton": false,
+         "hasLab": false,
+         "Prerequisites": [
+            {
+               "name": "Eng 214",
+               "credits": 3,
+               "department": "English Department",
+               "hasRecaitaiton": false,
+               "hasLab": false,
+               "Prerequisites": [
+                  {
+                     "name": "Eng 102",
+                     "credits": 3,
+                     "department": "English Department",
+                     "hasRecaitaiton": false,
+                     "hasLab": false,
+                     "Prerequisites": [
+                        {
+                           "name": "Eng 101",
+                           "credits": 3,
+                           "department": "English Department",
+                           "hasRecaitaiton": false,
+                           "hasLab": false,
+                           "Prerequisites": null,
+                           "preStanding": null,
+                           "teachers": null
+                        }
+                     ],
+                     "preStanding": null,
+                     "teachers": null
+                  }
+               ],
+               "preStanding": null,
+               "teachers": null
+            }
+         ],
+         "preStanding": null,
+         "teachers": null
+      }
+   ],
+   [
+      {
+         "name": "SWE 399",
+         "credits": 0,
+         "department": "Software Engineering Department",
+         "hasRecaitaiton": false,
+         "hasLab": false,
+         "Prerequisites": [
+            {
+               "name": "Eng 214",
+               "credits": 3,
+               "department": "English Department",
+               "hasRecaitaiton": false,
+               "hasLab": false,
+               "Prerequisites": [
+                  {
+                     "name": "Eng 102",
+                     "credits": 3,
+                     "department": "English Department",
+                     "hasRecaitaiton": false,
+                     "hasLab": false,
+                     "Prerequisites": [
+                        {
+                           "name": "Eng 101",
+                           "credits": 3,
+                           "department": "English Department",
+                           "hasRecaitaiton": false,
+                           "hasLab": false,
+                           "Prerequisites": null,
+                           "preStanding": null,
+                           "teachers": null
+                        }
+                     ],
+                     "preStanding": null,
+                     "teachers": null
+                  }
+               ],
+               "preStanding": null,
+               "teachers": null
+            },
+            {
+               "name": "SWE 363",
+               "credits": 3,
+               "department": "Software Engineering Department",
+               "hasRecaitaiton": false,
+               "hasLab": false,
+               "Prerequisites": null,
+               "preStanding": "junior",
+               "teachers": null
+            }
+         ],
+         "preStanding": null,
+         "teachers": null
+      }
+   ],
+   [
+      {
+         "name": "SWE XXX",
+         "credits": 3,
+         "department": "Software Engineering Department",
+         "hasRecaitaiton": false,
+         "hasLab": false,
+         "Prerequisites": null,
+         "preStanding": null,
+         "teachers": null
+      },
+      {
+         "name": "SWE XXX",
+         "credits": 3,
+         "department": "Software Engineering Department",
+         "hasRecaitaiton": false,
+         "hasLab": false,
+         "Prerequisites": null,
+         "preStanding": null,
+         "teachers": null
+      },
+      {
+         "name": "SWE 439",
+         "credits": 3,
+         "department": "Software Engineering Department",
+         "hasRecaitaiton": false,
+         "hasLab": false,
+         "Prerequisites": [
+            {
+               "name": "Stat 319",
+               "credits": 3,
+               "department": "Math Department",
+               "hasRecaitaiton": false,
+               "hasLab": true,
+               "Prerequisites": [
+                  {
+                     "name": "Math 102",
+                     "credits": 4,
+                     "department": "Math Department",
+                     "hasRecaitaiton": true,
+                     "hasLab": false,
+                     "Prerequisites": [
+                        {
+                           "name": "Math 101",
+                           "credits": 4,
+                           "department": "Math Department",
+                           "hasRecaitaiton": true,
+                           "hasLab": false,
+                           "Prerequisites": null,
+                           "preStanding": null,
+                           "teachers": null
+                        }
+                     ],
+                     "preStanding": null,
+                     "teachers": null
+                  }
+               ],
+               "preStanding": null,
+               "teachers": null
+            },
+            {
+               "name": "SWE 316",
+               "credits": 3,
+               "department": "Software Engineering Department",
+               "hasRecaitaiton": false,
+               "hasLab": false,
+               "Prerequisites": [
+                  {
+                     "name": "SWE 206",
+                     "credits": 3,
+                     "department": "Software Engineering Department",
+                     "hasRecaitaiton": false,
+                     "hasLab": true,
+                     "Prerequisites": [
+                        {
+                           "name": "ICS 108",
+                           "credits": 4,
+                           "department": "Information and Computer Science Department",
+                           "hasRecaitaiton": false,
+                           "hasLab": true,
+                           "Prerequisites": [
+                              {
+                                 "name": "ICS 104",
+                                 "credits": 3,
+                                 "department": "Information and Computer Science Department",
+                                 "hasRecaitaiton": false,
+                                 "hasLab": true,
+                                 "Prerequisites": null,
+                                 "preStanding": null,
+                                 "teachers": null
+                              }
+                           ],
+                           "preStanding": null,
+                           "teachers": null
+                        }
+                     ],
+                     "preStanding": null,
+                     "teachers": null
+                  }
+               ],
+               "preStanding": null,
+               "teachers": null
+            }
+         ],
+         "preStanding": null,
+         "teachers": null
+      },
+      {
+         "name": "SWE 411",
+         "credits": 3,
+         "department": "Software Engineering Department",
+         "hasRecaitaiton": false,
+         "hasLab": true,
+         "Prerequisites": [
+            {
+               "name": "SWE 316",
+               "credits": 3,
+               "department": "Software Engineering Department",
+               "hasRecaitaiton": false,
+               "hasLab": false,
+               "Prerequisites": [
+                  {
+                     "name": "SWE 206",
+                     "credits": 3,
+                     "department": "Software Engineering Department",
+                     "hasRecaitaiton": false,
+                     "hasLab": true,
+                     "Prerequisites": [
+                        {
+                           "name": "ICS 108",
+                           "credits": 4,
+                           "department": "Information and Computer Science Department",
+                           "hasRecaitaiton": false,
+                           "hasLab": true,
+                           "Prerequisites": [
+                              {
+                                 "name": "ICS 104",
+                                 "credits": 3,
+                                 "department": "Information and Computer Science Department",
+                                 "hasRecaitaiton": false,
+                                 "hasLab": true,
+                                 "Prerequisites": null,
+                                 "preStanding": null,
+                                 "teachers": null
+                              }
+                           ],
+                           "preStanding": null,
+                           "teachers": null
+                        }
+                     ],
+                     "preStanding": null,
+                     "teachers": null
+                  }
+               ],
+               "preStanding": null,
+               "teachers": null
+            },
+            {
+               "name": "SWE 387",
+               "credits": 3,
+               "department": "Software Engineering Department",
+               "hasRecaitaiton": false,
+               "hasLab": false,
+               "Prerequisites": null,
+               "preStanding": "junior",
+               "teachers": null
+            }
+         ],
+         "preStanding": null,
+         "teachers": null
+      },
+      {
+         "name": "IAS xxx",
+         "credits": 2,
+         "department": "Islamic and Arabic Department",
+         "hasRecaitaiton": false,
+         "hasLab": false,
+         "Prerequisites": null,
+         "preStanding": null,
+         "teachers": null
+      }
+   ],
+   [
+      {
+         "name": "SWE XXX",
+         "credits": 3,
+         "department": "Software Engineering Department",
+         "hasRecaitaiton": false,
+         "hasLab": false,
+         "Prerequisites": null,
+         "preStanding": null,
+         "teachers": null
+      },
+      {
+         "name": "SWE XXX",
+         "credits": 3,
+         "department": "Software Engineering Department",
+         "hasRecaitaiton": false,
+         "hasLab": false,
+         "Prerequisites": null,
+         "preStanding": null,
+         "teachers": null
+      },
+      {
+         "name": "SWE 412",
+         "credits": 2,
+         "department": "Software Engineering Department",
+         "hasRecaitaiton": false,
+         "hasLab": true,
+         "Prerequisites": [
+            {
+               "name": "SWE 411",
+               "credits": 3,
+               "department": "Software Engineering Department",
+               "hasRecaitaiton": false,
+               "hasLab": true,
+               "Prerequisites": [
+                  {
+                     "name": "SWE 316",
+                     "credits": 3,
+                     "department": "Software Engineering Department",
+                     "hasRecaitaiton": false,
+                     "hasLab": false,
+                     "Prerequisites": [
+                        {
+                           "name": "SWE 206",
+                           "credits": 3,
+                           "department": "Software Engineering Department",
+                           "hasRecaitaiton": false,
+                           "hasLab": true,
+                           "Prerequisites": [
+                              {
+                                 "name": "ICS 108",
+                                 "credits": 4,
+                                 "department": "Information and Computer Science Department",
+                                 "hasRecaitaiton": false,
+                                 "hasLab": true,
+                                 "Prerequisites": [
+                                    {
+                                       "name": "ICS 104",
+                                       "credits": 3,
+                                       "department": "Information and Computer Science Department",
+                                       "hasRecaitaiton": false,
+                                       "hasLab": true,
+                                       "Prerequisites": null,
+                                       "preStanding": null,
+                                       "teachers": null
+                                    }
+                                 ],
+                                 "preStanding": null,
+                                 "teachers": null
+                              }
+                           ],
+                           "preStanding": null,
+                           "teachers": null
+                        }
+                     ],
+                     "preStanding": null,
+                     "teachers": null
+                  },
+                  {
+                     "name": "SWE 387",
+                     "credits": 3,
+                     "department": "Software Engineering Department",
+                     "hasRecaitaiton": false,
+                     "hasLab": false,
+                     "Prerequisites": null,
+                     "preStanding": "junior",
+                     "teachers": null
+                  }
+               ],
+               "preStanding": null,
+               "teachers": null
+            },
+            {
+               "name": "SWE 326",
+               "credits": 3,
+               "department": "Software Engineering Department",
+               "hasRecaitaiton": false,
+               "hasLab": false,
+               "Prerequisites": [
+                  {
+                     "name": "SWE 216",
+                     "credits": 3,
+                     "department": "Software Engineering Department",
+                     "hasRecaitaiton": false,
+                     "hasLab": false,
+                     "Prerequisites": [
+                        {
+                           "name": "SWE 206",
+                           "credits": 3,
+                           "department": "Software Engineering Department",
+                           "hasRecaitaiton": false,
+                           "hasLab": true,
+                           "Prerequisites": [
+                              {
+                                 "name": "ICS 108",
+                                 "credits": 4,
+                                 "department": "Information and Computer Science Department",
+                                 "hasRecaitaiton": false,
+                                 "hasLab": true,
+                                 "Prerequisites": [
+                                    {
+                                       "name": "ICS 104",
+                                       "credits": 3,
+                                       "department": "Information and Computer Science Department",
+                                       "hasRecaitaiton": false,
+                                       "hasLab": true,
+                                       "Prerequisites": null,
+                                       "preStanding": null,
+                                       "teachers": null
+                                    }
+                                 ],
+                                 "preStanding": null,
+                                 "teachers": null
+                              }
+                           ],
+                           "preStanding": null,
+                           "teachers": null
+                        }
+                     ],
+                     "preStanding": null,
+                     "teachers": null
+                  }
+               ],
+               "preStanding": null,
+               "teachers": null
+            }
+         ],
+         "preStanding": null,
+         "teachers": null
+      },
+      {
+         "name": "ICS 433",
+         "credits": 3,
+         "department": "Information and Computer Science Department",
+         "hasRecaitaiton": false,
+         "hasLab": false,
+         "Prerequisites": [
+            {
+               "name": "COE 233",
+               "credits": 3,
+               "department": "Computer Engineering Department",
+               "hasRecaitaiton": false,
+               "hasLab": false,
+               "Prerequisites": [
+                  {
+                     "name": "ICS 104",
+                     "credits": 3,
+                     "department": "Information and Computer Science Department",
+                     "hasRecaitaiton": false,
+                     "hasLab": true,
+                     "Prerequisites": null,
+                     "preStanding": null,
+                     "teachers": null
+                  }
+               ],
+               "preStanding": null,
+               "teachers": null
+            }
+         ],
+         "preStanding": null,
+         "teachers": null
+      },
+      {
+         "name": "GS xxx",
+         "credits": 3,
+         "department": "Global Studies Department",
+         "hasRecaitaiton": false,
+         "hasLab": false,
+         "Prerequisites": null,
+         "preStanding": null,
+         "teachers": null
+      }
+   ]
+]

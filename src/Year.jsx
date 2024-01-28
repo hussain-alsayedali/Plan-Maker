@@ -2,7 +2,7 @@ import './output.css'
 import Term from "./Term"
 
 
-export default function Year(){
+export default function Year(props){
 
 
     return(
