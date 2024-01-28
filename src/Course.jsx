@@ -5,7 +5,7 @@ import { faPen } from '@fortawesome/free-solid-svg-icons'
 export default function Course(props){
 
     return (
-        <div className='border-2 px-8 py-4 rounded-lg w-36'>
+        <div className='border-2 px-4 py-2 rounded-lg w-28 m-2'>
             <h3>{props.courseName}</h3>
             <div className="flex justify-between items-center ">
                 <h3>{props.creditHours}</h3>

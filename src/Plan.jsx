@@ -13,13 +13,14 @@ export default function Plan() {
   
 
   let years = []
-
+  let j = 1
   for(let i = 0 ; i< dataNoSummer.length; i = i +2){
 
     
-    years.push(<Year key = {i} plannedTerms = {[dataNoSummer[i], dataNoSummer[i+1] ]} />)
+    years.push(<Year key = {i} yearNum = {j} plannedTerms = {[dataNoSummer[i], dataNoSummer[i+1] ]} />)
     if(i === summerTermIndex -2)
       years.push(summerYear)
+    j++;
   }
   
   return (

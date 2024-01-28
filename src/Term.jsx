@@ -3,8 +3,7 @@ import Course from "./Course"
 
 export default function Term(props){
 
-    console.log("ss")
-    console.log(props.courses)
+
     const courses = props.courses
     let shownCourses;
     if(Array.isArray(courses)){
