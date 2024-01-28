@@ -1,7 +1,7 @@
 import "./output.css";
 
 export default function ColorBlock(props) {
-  console.log(props.bgColor);
+
   return (
     <div className="w-12 hover:bg-slate-400 rounded">
       <div
