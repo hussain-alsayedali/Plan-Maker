@@ -4,7 +4,7 @@ import Term from "./Term";
 export default function Year(props) {
   let terms = props.plannedTerms;
   const shownTerms = terms.map((x, i) => (
-    <Term key={i} termNum={i} courses={x} />
+    <Term key={i} termNum={i%3} courses={x} yearNum={props.yearNum} handleAddCourse = {props.handleAddCourse} />
   ));
 
   return (

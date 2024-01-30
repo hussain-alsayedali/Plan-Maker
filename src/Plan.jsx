@@ -19,6 +19,7 @@ export default function Plan() {
       <Year
         key={i}
         yearNum={j}
+        handleAddCourse = {addCourse} 
         plannedTerms={[dataNoSummer[i], dataNoSummer[i + 1]]}
       />
     );
@@ -41,7 +42,18 @@ export default function Plan() {
     });
   }, []);
 
-  console.log(selectedCourses)
+  function addCourse(courseName, credits, term,year){
+    let  currentTerm = year +"-"+ term
+    console.log(selectedCourses)
+    setSelectedCourses(prevCourses =>{
+      let updated = {...prevCourses}
+      console.log(updated)
+      console.log(currentTerm)
+      updated[currentTerm].push({name : courseName, credtis :credits })
+    })
+    console.log(selectedCourses)
+  }
+  // console.log(selectedCourses)
   function changeSelectedTerm(term) {
     console.log("clicked");
     setSelectedTerm(term);

@@ -25,7 +25,7 @@ export default function Course(props) {
   return (
     <button
       className={`border-2 px-4 py-2 rounded-lg w-28 m-2  ${backgroundColor}`}
-      onClick={changeColor}
+      onClick={props.addCourse}
     >
       <h3>{props.courseName}</h3>
       <div className="flex justify-between items-center ">
