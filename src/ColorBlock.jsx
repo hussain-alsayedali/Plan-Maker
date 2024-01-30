@@ -4,7 +4,7 @@ export default function ColorBlock(props) {
   return (
     <div
       className={`w-12 hover:bg-slate-400 rounded ${
-        props.selected ? "bg-red-500" : ""
+        props.selected && "bg-red-500"
       } `}
       onClick={props.handleChange}
     >

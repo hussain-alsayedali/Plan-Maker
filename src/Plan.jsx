@@ -1,5 +1,5 @@
 import "./output.css";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Year from "./Year";
 import swePlanData from "./swePlanNoClass.json";
 import ColorPalette from "./ColorPalette";
@@ -27,7 +27,21 @@ export default function Plan() {
   }
 
   const [selectedTerm, setSelectedTerm] = useState(0);
+  const [selectedCourses , setSelectedCourses] = useState({})
 
+  useEffect(() => {
+    setSelectedCourses((prevSelectedCourses) => {
+      let updatedSelectedCourses = { ...prevSelectedCourses };
+      for (let year = 0; year < 5; year++) {
+        for (let term = 0; term < 3; term++) {
+          updatedSelectedCourses[`${year}-${term}`] = [];
+        }
+      }
+      return updatedSelectedCourses;
+    });
+  }, []);
+
+  console.log(selectedCourses)
   function changeSelectedTerm(term) {
     console.log("clicked");
     setSelectedTerm(term);
