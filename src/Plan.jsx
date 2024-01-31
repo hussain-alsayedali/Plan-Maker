@@ -4,6 +4,9 @@ import Year from "./Year";
 import swePlanData from "./swePlanNoClass.json";
 import ColorPalette from "./ColorPalette";
 export default function Plan() {
+  const [selectedTerm, setSelectedTerm] = useState("");
+  const [selectedCourses, setSelectedCourses] = useState({});
+
   // making the plan
   let planData = swePlanData;
   const summerTermIndex = 6;
@@ -19,45 +22,56 @@ export default function Plan() {
       <Year
         key={i}
         yearNum={j}
-        handleAddCourse = {addCourse} 
+        handleAddCourse={addCourse}
         plannedTerms={[dataNoSummer[i], dataNoSummer[i + 1]]}
+        selectedTerm={selectedTerm}
       />
     );
     if (i === summerTermIndex - 2) years.push(summerYear);
     j++;
   }
 
-  const [selectedTerm, setSelectedTerm] = useState(0);
-  const [selectedCourses , setSelectedCourses] = useState({})
-
   useEffect(() => {
     setSelectedCourses((prevSelectedCourses) => {
       let updatedSelectedCourses = { ...prevSelectedCourses };
       for (let year = 0; year < 5; year++) {
         for (let term = 0; term < 3; term++) {
-          updatedSelectedCourses[`${year}-${term}`] = [];
+          const termKey = `${year}-${term}`;
+          updatedSelectedCourses[termKey] = [];
         }
       }
       return updatedSelectedCourses;
     });
   }, []);
 
-  function addCourse(courseName, credits, term,year){
-    let  currentTerm = year +"-"+ term
-    console.log(selectedCourses)
-    setSelectedCourses(prevCourses =>{
-      let updated = {...prevCourses}
-      console.log(updated)
-      console.log(currentTerm)
-      updated[currentTerm].push({name : courseName, credtis :credits })
-    })
-    console.log(selectedCourses)
+  function addCourse(courseName, credits, selectedTerm) {
+    if (!selectedTerm) {
+      return;
+    }
+    console.log("clicked add course " + courseName);
+    setSelectedCourses((prevCourses) => {
+      let updated = { ...prevCourses };
+      // if (!updated[selectedTerm]) {
+      //   updated[selectedTerm] = []; // Initialize the array if it doesn't exist
+      // }
+      if (!updated[selectedTerm].some((course) => course.name === courseName)) {
+        updated[selectedTerm].push({ name: courseName, credits: credits });
+      } else {
+        console.log("course already added");
+      }
+      return updated;
+    });
+    // console.log("added Course");
+    // console.log(selectedCourses);
   }
-  // console.log(selectedCourses)
+
+  useEffect(() => {
+    console.log("updated selectedCourses", selectedCourses);
+  }, [selectedCourses]);
+
   function changeSelectedTerm(term) {
-    console.log("clicked");
+    console.log("clicked change term");
     setSelectedTerm(term);
-    console.log(term);
   }
 
   return (

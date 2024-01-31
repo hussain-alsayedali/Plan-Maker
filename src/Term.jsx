@@ -12,7 +12,9 @@ export default function Term(props) {
         hasLab={x.hasLab}
         hasRecitation={x.hasRecaitaiton}
         creditHours={x.credits}
-        addCourse = {() =>props.handleAddCourse(x.name, x.credits , props.termNum, props.yearNum)}
+        addCourse={() =>
+          props.handleAddCourse(x.name, x.credits, props.selectedTerm)
+        }
       />
     ));
   } else {
@@ -23,7 +25,13 @@ export default function Term(props) {
         hasLab={courses.hasLab}
         hasRecitation={courses.hasRecaitaiton}
         creditHours={courses.credits}
-        addCourse = {() =>props.handleAddCourse(courses.name, courses.credits , props.termNum, props.yearNum)}
+        addCourse={() =>
+          props.handleAddCourse(
+            courses.name,
+            courses.credits,
+            props.selectedTerm
+          )
+        }
       />
     );
   }
