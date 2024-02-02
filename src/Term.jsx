@@ -13,8 +13,11 @@ export default function Term(props) {
         hasRecitation={x.hasRecaitaiton}
         creditHours={x.credits}
         addCourse={() =>
-          props.handleAddCourse(x.name, x.credits, props.selectedTerm)
+          // props.handleAddCourse(x.name, x.credits, props.selectedTerm)
+          props.handleAddCourse(x.name, x.credits)
         }
+        selectedCourses={props.selectedCourses}
+        selectedTerm={props.selectedTerm}
       />
     ));
   } else {
@@ -28,10 +31,12 @@ export default function Term(props) {
         addCourse={() =>
           props.handleAddCourse(
             courses.name,
-            courses.credits,
-            props.selectedTerm
+            courses.credits
+            // props.selectedTerm
           )
         }
+        selectedCourses={props.selectedCourses}
+        selectedTerm={props.selectedTerm}
       />
     );
   }

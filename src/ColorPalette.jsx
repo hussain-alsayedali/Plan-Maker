@@ -25,9 +25,7 @@ export default function ColorPalette(props) {
   //   }
   // }
 
-  function blockChange() {
-    console.log("clicked");
-  }
+  console.log("color palette ", props.selectedCourses);
 
   return (
     <div className=" ">
@@ -43,24 +41,24 @@ export default function ColorPalette(props) {
         <ColorBlock
           hours={6}
           bgColor={colors[0][0]}
-          id="0-1"
+          id="0-0"
           // onClick={}
+          handleChange={() => props.handleChange("0-0")}
+          selected={props.currentTerm === "0-0"}
+        />
+        <ColorBlock
+          hours={3}
+          bgColor={colors[0][1]}
+          id="0-1"
           handleChange={() => props.handleChange("0-1")}
           selected={props.currentTerm === "0-1"}
         />
         <ColorBlock
           hours={3}
-          bgColor={colors[0][1]}
+          bgColor={colors[0][2]}
           id="0-2"
           handleChange={() => props.handleChange("0-2")}
           selected={props.currentTerm === "0-2"}
-        />
-        <ColorBlock
-          hours={3}
-          bgColor={colors[0][2]}
-          id="0-3"
-          handleChange={() => props.handleChange("0-3")}
-          selected={props.currentTerm === "0-3"}
         />
         <h3>year 2</h3>
         <ColorBlock

@@ -3,15 +3,37 @@ import { useState, useEffect } from "react";
 import Year from "./Year";
 import swePlanData from "./swePlanNoClass.json";
 import ColorPalette from "./ColorPalette";
+
+let InitializeCoursesObject = {};
+for (let year = 0; year < 5; year++) {
+  for (let term = 0; term < 3; term++) {
+    const termKey = `${year}-${term}`;
+    InitializeCoursesObject[termKey] = [];
+  }
+}
+
 export default function Plan() {
   const [selectedTerm, setSelectedTerm] = useState("");
-  const [selectedCourses, setSelectedCourses] = useState({});
+  const [selectedCourses, setSelectedCourses] = useState(
+    InitializeCoursesObject
+  );
+  // useEffect(() => {
+  //   setSelectedCourses(), [];
+  // });
 
+  console.log("selected courses : ", selectedCourses);
   // making the plan
   let planData = swePlanData;
   const summerTermIndex = 6;
   let summerYear = (
-    <Year key={"summer"} plannedTerms={planData[summerTermIndex]} />
+    <Year
+      key={"summer"}
+      yearNum={"summer"}
+      handleAddCourse={addCourse}
+      plannedTerms={planData[summerTermIndex]}
+      selectedCourses={selectedCourses}
+      selectedTerm={selectedTerm}
+    />
   );
   let dataNoSummer = planData.toSpliced(summerTermIndex, 1);
 
@@ -25,26 +47,15 @@ export default function Plan() {
         handleAddCourse={addCourse}
         plannedTerms={[dataNoSummer[i], dataNoSummer[i + 1]]}
         selectedTerm={selectedTerm}
+        selectedCourses={selectedCourses}
       />
     );
     if (i === summerTermIndex - 2) years.push(summerYear);
     j++;
   }
 
-  useEffect(() => {
-    setSelectedCourses((prevSelectedCourses) => {
-      let updatedSelectedCourses = { ...prevSelectedCourses };
-      for (let year = 0; year < 5; year++) {
-        for (let term = 0; term < 3; term++) {
-          const termKey = `${year}-${term}`;
-          updatedSelectedCourses[termKey] = [];
-        }
-      }
-      return updatedSelectedCourses;
-    });
-  }, []);
-
-  function addCourse(courseName, credits, selectedTerm) {
+  function addCourse(courseName, credits) {
+    console.log(selectedTerm);
     if (!selectedTerm) {
       return;
     }
@@ -61,8 +72,6 @@ export default function Plan() {
       }
       return updated;
     });
-    // console.log("added Course");
-    // console.log(selectedCourses);
   }
 
   useEffect(() => {
@@ -78,6 +87,7 @@ export default function Plan() {
     <main className="">
       <div className="flex">{years}</div>
       <ColorPalette
+        selectedCourses={selectedCourses}
         handleChange={changeSelectedTerm}
         currentTerm={selectedTerm}
       />

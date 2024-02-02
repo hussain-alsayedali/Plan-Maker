@@ -11,6 +11,7 @@ export default function Year(props) {
       yearNum={props.yearNum}
       handleAddCourse={props.handleAddCourse}
       selectedTerm={props.selectedTerm}
+      selectedCourses={props.selectedCourses}
     />
   ));
 

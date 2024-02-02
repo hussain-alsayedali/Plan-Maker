@@ -5,8 +5,17 @@ import { faComputer } from "@fortawesome/free-solid-svg-icons";
 import { faPen } from "@fortawesome/free-solid-svg-icons";
 export default function Course(props) {
   const [backgroundColor, setBackGroundColor] = useState("");
+
+  // let currnetTerm =
   function changeColor() {
-    setBackGroundColor("bg-red-500");
+    let currentTerm = props.selectedTerm;
+    console.log(currentTerm, props.selectedTerm);
+    const termSplited = currentTerm.split("-");
+    const yearSelected = termSplited[0];
+    const termSelected = termSplited[1];
+    setBackGroundColor(colors[yearSelected][termSelected]);
+    console.log(colors[yearSelected][termSelected]);
+    props.addCourse();
   }
 
   const opacity = 100;
@@ -22,10 +31,25 @@ export default function Course(props) {
       colors[i][j] = `${colors[i][j]}${opacity * (i + 1)}`;
     }
   }
+  // function findCurrentTerm() {
+  //   console.log("enternd find");
+  //   const currentTerms = Object.keys(props.selectedCourses);
+  //   for (let i = 0; i < currentTerms.length; i++) {
+  //     let currentTerm = currentTerms[i];
+
+  //     for (let i = 0; i < currentTerm.length; i++) {
+  //       if (currentTerm[i]["name"] === props.courseName) {
+  //         console.log(currentTerm[i]["name"]);
+  //         return currentTerm;
+  //       }
+  //     }
+  //   }
+  // }
+
   return (
     <button
-      className={`border-2 px-4 py-2 rounded-lg w-28 m-2  ${backgroundColor}`}
-      onClick={props.addCourse}
+      className={`border-2 px-4 py-2 rounded-lg w-28 m-2  bg-${backgroundColor}`}
+      onClick={changeColor}
     >
       <h3>{props.courseName}</h3>
       <div className="flex justify-between items-center ">
