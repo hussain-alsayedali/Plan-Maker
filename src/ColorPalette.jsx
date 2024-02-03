@@ -39,7 +39,14 @@ export default function ColorPalette(props) {
         <h3>Summer</h3>
         <h3>year 1</h3>
         <ColorBlock
-          hours={6}
+          hours={
+            props.selectedCourses
+              ? props.selectedCourses["0-0"].reduce(
+                  (accu, currentCourse) => accu + currentCourse["credits"],
+                  0
+                )
+              : 0
+          }
           bgColor={colors[0][0]}
           id="0-0"
           // onClick={}
@@ -47,14 +54,28 @@ export default function ColorPalette(props) {
           selected={props.currentTerm === "0-0"}
         />
         <ColorBlock
-          hours={3}
+          hours={
+            props.selectedCourses
+              ? props.selectedCourses["0-1"].reduce(
+                  (accu, currentCourse) => accu + currentCourse["credits"],
+                  0
+                )
+              : 0
+          }
           bgColor={colors[0][1]}
           id="0-1"
           handleChange={() => props.handleChange("0-1")}
           selected={props.currentTerm === "0-1"}
         />
         <ColorBlock
-          hours={3}
+          hours={
+            props.selectedCourses
+              ? props.selectedCourses["0-2"].reduce(
+                  (accu, currentCourse) => accu + currentCourse["credits"],
+                  0
+                )
+              : 0
+          }
           bgColor={colors[0][2]}
           id="0-2"
           handleChange={() => props.handleChange("0-2")}
