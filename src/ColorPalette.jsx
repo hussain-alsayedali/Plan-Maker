@@ -2,29 +2,55 @@ import "./output.css";
 import ColorBlock from "./ColorBlock";
 import { faPalette } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+const opacity = 100;
+const colors = {
+  0: ["red-", "zinc-", "yellow-"],
+  1: ["orange-", "teal-", "cyan-"],
+  2: ["rose-", "pink-", "fuchsia-"],
+  3: ["violet-", "emerald-", "stone-"],
+  4: ["indigo-", "sky-", "lime-"],
+};
+const colorsKeys = Object.keys(colors);
 
+for (let i = 0; i < 5; i++) {
+  for (let j = 0; j < 3; j++) {
+    colors[i][j] = `${colors[i][j]}${opacity * (i + 1)}`;
+  }
+}
+
+// console.log("meow ", colors[0]);
 export default function ColorPalette(props) {
-  const opacity = 100;
-  const colors = {
-    0: ["red-", "zinc-", "yellow-"],
-    1: ["orange-", "teal-", "cyan-"],
-    2: ["rose-", "pink-", "fuchsia-"],
-    3: ["violet-", "emerald-", "stone-"],
-    4: ["indigo-", "sky-", "lime-"],
-  };
-  for (let i = 0; i < 5; i++) {
-    for (let j = 0; j < 3; j++) {
-      colors[i][j] = `${colors[i][j]}${opacity * (i + 1)}`;
+  let colorBlocks = {};
+
+  for (let i = 0; i < colorsKeys.length; i++) {
+    let currentArrayBlocks = [];
+
+    for (let j = 0; j < colors[i].length; j++) {
+      let currentBlock = (
+        <ColorBlock
+          hours={
+            props.selectedCourses
+              ? props.selectedCourses[`${i}-${j}`].reduce(
+                  (accu, currentCourse) => accu + currentCourse["credits"],
+                  0
+                )
+              : 0
+          }
+          bgColor={colors[i][j]}
+          key={`${i}-${j}`}
+          id={`${i}-${j}`}
+          // onClick={}
+          handleChange={() => props.handleChange(`${i}-${j}`)}
+          selected={props.currentTerm === `${i}-${j}`}
+        />
+      );
+      // console.log("cuurent blocks", currentArrayBlocks);
+      currentArrayBlocks.push(currentBlock);
     }
+    colorBlocks[i] = currentArrayBlocks;
   }
 
-  // for (let i = 0; i < Object.keys(colors).length; i++) {
-  //   let currentColors = colors[i]
-  //   for(let i = 0 ; i< currentColors.length ; i++ ){
-
-  //   }
-  // }
-
+  console.log("current array block", colorBlocks);
   console.log("color palette ", props.selectedCourses);
 
   return (
@@ -38,137 +64,18 @@ export default function ColorPalette(props) {
         <h3>Term 2</h3>
         <h3>Summer</h3>
         <h3>year 1</h3>
-        <ColorBlock
-          hours={
-            props.selectedCourses
-              ? props.selectedCourses["0-0"].reduce(
-                  (accu, currentCourse) => accu + currentCourse["credits"],
-                  0
-                )
-              : 0
-          }
-          bgColor={colors[0][0]}
-          id="0-0"
-          // onClick={}
-          handleChange={() => props.handleChange("0-0")}
-          selected={props.currentTerm === "0-0"}
-        />
-        <ColorBlock
-          hours={
-            props.selectedCourses
-              ? props.selectedCourses["0-1"].reduce(
-                  (accu, currentCourse) => accu + currentCourse["credits"],
-                  0
-                )
-              : 0
-          }
-          bgColor={colors[0][1]}
-          id="0-1"
-          handleChange={() => props.handleChange("0-1")}
-          selected={props.currentTerm === "0-1"}
-        />
-        <ColorBlock
-          hours={
-            props.selectedCourses
-              ? props.selectedCourses["0-2"].reduce(
-                  (accu, currentCourse) => accu + currentCourse["credits"],
-                  0
-                )
-              : 0
-          }
-          bgColor={colors[0][2]}
-          id="0-2"
-          handleChange={() => props.handleChange("0-2")}
-          selected={props.currentTerm === "0-2"}
-        />
+        {colorBlocks[0]}
+
         <h3>year 2</h3>
-        <ColorBlock
-          hours={3}
-          bgColor={colors[1][0]}
-          id="1-0"
-          handleChange={() => props.handleChange("1-0")}
-          selected={props.currentTerm === "1-0"}
-        />
-        <ColorBlock
-          hours={3}
-          bgColor={colors[1][1]}
-          id="1-1"
-          handleChange={() => props.handleChange("1-1")}
-          selected={props.currentTerm === "1-1"}
-        />
-        <ColorBlock
-          hours={3}
-          bgColor={colors[1][2]}
-          id="1-2"
-          handleChange={() => props.handleChange("1-2")}
-          selected={props.currentTerm === "1-2"}
-        />
+        {colorBlocks[1]}
         <h3>year 3</h3>
-        <ColorBlock
-          hours={3}
-          bgColor={colors[2][0]}
-          id="2-0"
-          handleChange={() => props.handleChange("2-0")}
-          selected={props.currentTerm === "2-0"}
-        />
-        <ColorBlock
-          hours={3}
-          bgColor={colors[2][1]}
-          id="2-1"
-          handleChange={() => props.handleChange("2-1")}
-          selected={props.currentTerm === "2-1"}
-        />
-        <ColorBlock
-          hours={3}
-          bgColor={colors[2][2]}
-          id="2-2"
-          handleChange={() => props.handleChange("2-2")}
-          selected={props.currentTerm === "2-2"}
-        />
+        {colorBlocks[2]}
+
         <h3>year 4</h3>
-        <ColorBlock
-          hours={3}
-          bgColor={colors[3][0]}
-          id="3-0"
-          handleChange={() => props.handleChange("3-0")}
-          selected={props.currentTerm === "3-0"}
-        />
-        <ColorBlock
-          hours={3}
-          bgColor={colors[3][1]}
-          id="3-1"
-          handleChange={() => props.handleChange("3-1")}
-          selected={props.currentTerm === "3-1"}
-        />
-        <ColorBlock
-          hours={3}
-          bgColor={colors[3][2]}
-          id="3-2"
-          handleChange={() => props.handleChange("3-2")}
-          selected={props.currentTerm === "3-2"}
-        />
+        {colorBlocks[3]}
+
         <h3>year 5</h3>
-        <ColorBlock
-          hours={3}
-          bgColor={colors[4][0]}
-          id="4-0"
-          handleChange={() => props.handleChange("4-0")}
-          selected={props.currentTerm === "4-0"}
-        />
-        <ColorBlock
-          hours={3}
-          bgColor={colors[4][1]}
-          id="4-1"
-          handleChange={() => props.handleChange("4-1")}
-          selected={props.currentTerm === "4-1"}
-        />
-        <ColorBlock
-          hours={3}
-          bgColor={colors[4][2]}
-          id="4-2"
-          handleChange={() => props.handleChange("4-2")}
-          selected={props.currentTerm === "4-2"}
-        />
+        {colorBlocks[4]}
       </div>
     </div>
   );
