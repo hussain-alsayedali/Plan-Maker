@@ -54,10 +54,26 @@ export default function Plan() {
     j++;
   }
 
-  function addCourse(courseName, credits) {
+  function addCourse(courseName, credits, prevTerm) {
     console.log(selectedTerm);
     if (!selectedTerm) {
       return;
+    }
+    console.log("prevTerm", prevTerm);
+    if (prevTerm !== "50-50") {
+      setSelectedCourses((prevCourses) => {
+        let updated = { ...prevCourses };
+        let prevTermList = updated[prevTerm];
+        for (let i = 0; i < prevTermList.length; i++) {
+          if (prevTermList[i]["name"] === courseName) {
+            prevTermList.splice(i, 1);
+            break;
+          }
+        }
+        updated[prevTerm] = prevTermList;
+
+        return updated;
+      });
     }
     console.log("clicked add course " + courseName);
     setSelectedCourses((prevCourses) => {

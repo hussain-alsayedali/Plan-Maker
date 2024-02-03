@@ -5,17 +5,20 @@ import { faComputer } from "@fortawesome/free-solid-svg-icons";
 import { faPen } from "@fortawesome/free-solid-svg-icons";
 export default function Course(props) {
   const [backgroundColor, setBackGroundColor] = useState("");
-
+  const [courseTerm, setCurrentTerm] = useState("50-50");
   // let currnetTerm =
   function changeColor() {
-    let currentTerm = props.selectedTerm;
-    console.log(currentTerm, props.selectedTerm);
-    const termSplited = currentTerm.split("-");
+    let selectedTerm = props.selectedTerm;
+    console.log(selectedTerm, props.selectedTerm);
+
+    const termSplited = selectedTerm.split("-");
     const yearSelected = termSplited[0];
     const termSelected = termSplited[1];
+
     setBackGroundColor(colors[yearSelected][termSelected]);
     console.log(colors[yearSelected][termSelected]);
-    props.addCourse();
+    props.addCourse(props.courseName, props.creditHours, courseTerm);
+    setCurrentTerm(selectedTerm);
   }
 
   const opacity = 100;
@@ -31,20 +34,6 @@ export default function Course(props) {
       colors[i][j] = `${colors[i][j]}${opacity * (i + 1)}`;
     }
   }
-  // function findCurrentTerm() {
-  //   console.log("enternd find");
-  //   const currentTerms = Object.keys(props.selectedCourses);
-  //   for (let i = 0; i < currentTerms.length; i++) {
-  //     let currentTerm = currentTerms[i];
-
-  //     for (let i = 0; i < currentTerm.length; i++) {
-  //       if (currentTerm[i]["name"] === props.courseName) {
-  //         console.log(currentTerm[i]["name"]);
-  //         return currentTerm;
-  //       }
-  //     }
-  //   }
-  // }
 
   return (
     <button
