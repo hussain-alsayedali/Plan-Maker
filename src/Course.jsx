@@ -9,18 +9,18 @@ export default function Course(props) {
   // let currnetTerm =
   function changeColor() {
     let selectedTerm = props.selectedTerm;
-    console.log(selectedTerm, props.selectedTerm);
+    // console.log(selectedTerm, props.selectedTerm);
 
     const termSplited = selectedTerm.split("-");
     const yearSelected = termSplited[0];
     const termSelected = termSplited[1];
 
     setBackGroundColor(colors[yearSelected][termSelected]);
-    console.log(colors[yearSelected][termSelected]);
-    props.addCourse(props.courseName, props.creditHours, courseTerm);
+    // console.log(colors[yearSelected][termSelected]);
+    props.addCourse(props.courseName, props.creditHours, courseTerm, props.Prerequisites);
     setCurrentTerm(selectedTerm);
   }
-
+  // console.log("course" , props.courseName , props.Prerequisites)
   const opacity = 100;
   const colors = {
     0: ["red-", "zinc-", "yellow-"],

@@ -12,6 +12,8 @@ export default function Term(props) {
         hasLab={x.hasLab}
         hasRecitation={x.hasRecaitaiton}
         creditHours={x.credits}
+        Prerequisites = {x.Prerequisites}
+
         addCourse={
           // props.handleAddCourse(x.name, x.credits, props.selectedTerm)
           // props.handleAddCourse(x.name, x.credits)
@@ -29,6 +31,8 @@ export default function Term(props) {
         hasLab={courses.hasLab}
         hasRecitation={courses.hasRecaitaiton}
         creditHours={courses.credits}
+        Prerequisites = {courses.Prerequisites}
+
         addCourse={
           // props.handleAddCourse(
           //   courses.name,

@@ -50,8 +50,8 @@ export default function ColorPalette(props) {
     colorBlocks[i] = currentArrayBlocks;
   }
 
-  console.log("current array block", colorBlocks);
-  console.log("color palette ", props.selectedCourses);
+  // console.log("current array block", colorBlocks);
+  // console.log("color palette ", props.selectedCourses);
 
   return (
     <div className=" ">

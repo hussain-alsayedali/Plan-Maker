@@ -21,7 +21,7 @@ export default function Plan() {
   //   setSelectedCourses(), [];
   // });
 
-  console.log("selected courses : ", selectedCourses);
+  // console.log("selected courses : ", selectedCourses);
   // making the plan
   let planData = swePlanData;
   const summerTermIndex = 6;
@@ -54,12 +54,18 @@ export default function Plan() {
     j++;
   }
 
-  function addCourse(courseName, credits, prevTerm) {
+  function addCourse(courseName, credits, prevTerm, preReq) {
     console.log(selectedTerm);
+    // if no term is selected then exit the function
     if (!selectedTerm) {
       return;
     }
-    console.log("prevTerm", prevTerm);
+    console.log("preReq",preReq)
+
+
+
+
+    // if the course was selected in another term then remove it and add it to current term
     if (prevTerm !== "50-50") {
       setSelectedCourses((prevCourses) => {
         let updated = { ...prevCourses };
@@ -75,7 +81,7 @@ export default function Plan() {
         return updated;
       });
     }
-    console.log("clicked add course " + courseName);
+    // console.log("clicked add course " + courseName);
     setSelectedCourses((prevCourses) => {
       let updated = { ...prevCourses };
       // if (!updated[selectedTerm]) {
@@ -84,7 +90,7 @@ export default function Plan() {
       if (!updated[selectedTerm].some((course) => course.name === courseName)) {
         updated[selectedTerm].push({ name: courseName, credits: credits });
       } else {
-        console.log("course already added");
+        // console.log("course already added");
       }
       return updated;
     });
@@ -95,7 +101,7 @@ export default function Plan() {
   }, [selectedCourses]);
 
   function changeSelectedTerm(term) {
-    console.log("clicked change term");
+    // console.log("clicked change term");
     setSelectedTerm(term);
   }
 
