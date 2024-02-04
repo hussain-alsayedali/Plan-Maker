@@ -8,17 +8,21 @@ export default function Course(props) {
   const [courseTerm, setCurrentTerm] = useState("50-50");
   // let currnetTerm =
   function changeColor() {
-    let selectedTerm = props.selectedTerm;
-    // console.log(selectedTerm, props.selectedTerm);
+    let selectedTerm = props.selectedTerm
+    if(selectedTerm){
+      
+      // console.log(selectedTerm, props.selectedTerm);
+  
+      const termSplited = selectedTerm.split("-");
+      const yearSelected = termSplited[0];
+      const termSelected = termSplited[1];
+  
+      setBackGroundColor(colors[yearSelected][termSelected]);
+      // console.log(colors[yearSelected][termSelected]);
+      props.addCourse(props.courseName, props.creditHours, courseTerm, props.Prerequisites);
+      setCurrentTerm(selectedTerm);
+    }
 
-    const termSplited = selectedTerm.split("-");
-    const yearSelected = termSplited[0];
-    const termSelected = termSplited[1];
-
-    setBackGroundColor(colors[yearSelected][termSelected]);
-    // console.log(colors[yearSelected][termSelected]);
-    props.addCourse(props.courseName, props.creditHours, courseTerm, props.Prerequisites);
-    setCurrentTerm(selectedTerm);
   }
   // console.log("course" , props.courseName , props.Prerequisites)
   const opacity = 100;
