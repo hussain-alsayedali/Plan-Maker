@@ -48,7 +48,7 @@ export default function Course(props) {
       const hasPreReq = preReqNames.length > 0;
       if (hasPreReq) {
         console.log("there is preReqfor this course", preReqNames);
-        props.handleErrorMessage(preReqNames)
+        props.handleErrorMessage(preReqNames, props.courseName)
         return;
       }
 
@@ -86,11 +86,11 @@ export default function Course(props) {
 
   return (
     <button
-      className={`border-2 px-4 py-2 rounded-lg w-28 m-2  bg-${backgroundColor}`}
+      className={`border-2 px-4 py-2 rounded-lg w-28 m-1  bg-${backgroundColor}`}
       onClick={changeColor}
     >
       <h3>{props.courseName}</h3>
-      <div className="flex justify-between items-center ">
+      <div className="flex justify-between items-center">
         <h3>{props.creditHours}</h3>
         {props.hasLab && <FontAwesomeIcon icon={faComputer} />}
         {props.hasRecitation && <FontAwesomeIcon icon={faPen} />}

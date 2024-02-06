@@ -39,7 +39,7 @@ export default function Plan() {
     const timer = setTimeout(() => {
       setShowMessage(false);
       setErrorMessage("");
-    }, 1000);
+    }, 4000);
 
     return () => clearTimeout(timer);
   },[showMessage])
@@ -116,8 +116,9 @@ export default function Plan() {
     setSelectedTerm(term);
   }
 
-  function updateErrorMessage(errMessage){
-    setErrorMessage(...errMessage)
+  function updateErrorMessage(errMessage, clickedCourseName){
+
+    setErrorMessage(clickedCourseName + " has unmeeted prerequisits for this which are : " +errMessage.join(", "))
     setShowMessage(true)
   }
 
@@ -125,13 +126,13 @@ export default function Plan() {
     <main className="">
       <div className="flex">
         {years} 
-        {showMessage && <h3>{errorMessage}</h3>}
-      </div>
-      <ColorPalette
+        <ColorPalette
         selectedCourses={selectedCourses}
         handleChange={changeSelectedTerm}
         currentTerm={selectedTerm}
       />
+      </div>
+      {showMessage && <h3 className="border-2 border-red-500 bg-red-200">{errorMessage}</h3>}
     </main>
   );
 }

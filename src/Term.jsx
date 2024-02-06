@@ -48,11 +48,20 @@ export default function Term(props) {
       />
     );
   }
-
+  let sumOfHours= 0
+  if(Array.isArray(courses)){
+    for(let i =0 ;i < courses.length ; i++){
+      sumOfHours += parseInt(courses[i].credits)
+    }
+  }
+  console.log(sumOfHours)
   return (
-    <div className="">
+    <div className="flex flex-col justify-between">
       {/* <Course courseName = "moe" creditHours = {3} hasLab = {true} hasRecitation = {true} /> */}
-      {shownCourses}
+      <div>
+        {shownCourses}
+      </div>
+      <h4 className="text-center">{sumOfHours} </h4>
     </div>
   );
 }

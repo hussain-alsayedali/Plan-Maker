@@ -17,9 +17,9 @@ export default function Year(props) {
   ));
 
   return (
-    <div>
-      <h1>{isNaN(props.yearNum) ? "summer" : "Year " + props.yearNum}</h1>
-      <div className="flex justify-center">
+    <div className=" border border-black rounded mr-2">
+      <h2 className="text-center">{isNaN(props.yearNum) ? "summer" : "Year " + props.yearNum}</h2>
+      <div className="flex justify-center ">
         {/* <Term /> */}
         {shownTerms}
       </div>
