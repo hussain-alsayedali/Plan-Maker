@@ -21,6 +21,7 @@ export default function Term(props) {
         }
         selectedCourses={props.selectedCourses}
         selectedTerm={props.selectedTerm}
+        handleErrorMessage = {props.handleErrorMessage}
       />
     ));
   } else {
@@ -43,6 +44,7 @@ export default function Term(props) {
         }
         selectedCourses={props.selectedCourses}
         selectedTerm={props.selectedTerm}
+        handleErrorMessage = {props.handleErrorMessage}
       />
     );
   }

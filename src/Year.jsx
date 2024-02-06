@@ -12,6 +12,7 @@ export default function Year(props) {
       handleAddCourse={props.handleAddCourse}
       selectedTerm={props.selectedTerm}
       selectedCourses={props.selectedCourses}
+      handleErrorMessage = {props.handleErrorMessage}
     />
   ));
 

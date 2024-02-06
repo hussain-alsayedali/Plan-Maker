@@ -48,6 +48,7 @@ export default function Course(props) {
       const hasPreReq = preReqNames.length > 0;
       if (hasPreReq) {
         console.log("there is preReqfor this course", preReqNames);
+        props.handleErrorMessage(preReqNames)
         return;
       }
 

@@ -17,7 +17,8 @@ export default function Plan() {
   const [selectedCourses, setSelectedCourses] = useState(
     InitializeCoursesObject
   );
-  const [showPreRequisite, setShowPreRequisite] = useState(false);
+  const [errorMessage, setErrorMessage] = useState("");
+  const [showMessage, setShowMessage] = useState(false)
 
   let planData = swePlanData;
   const summerTermIndex = 6;
@@ -29,9 +30,19 @@ export default function Plan() {
       plannedTerms={planData[summerTermIndex]}
       selectedCourses={selectedCourses}
       selectedTerm={selectedTerm}
+      handleErrorMessage = {updateErrorMessage}
     />
   );
   let dataNoSummer = planData.toSpliced(summerTermIndex, 1);
+
+  useEffect(() =>{
+    const timer = setTimeout(() => {
+      setShowMessage(false);
+      setErrorMessage("");
+    }, 1000);
+
+    return () => clearTimeout(timer);
+  },[showMessage])
 
   let years = [];
   let j = 1;
@@ -44,6 +55,7 @@ export default function Plan() {
         plannedTerms={[dataNoSummer[i], dataNoSummer[i + 1]]}
         selectedTerm={selectedTerm}
         selectedCourses={selectedCourses}
+        handleErrorMessage = {updateErrorMessage}
       />
     );
     if (i === summerTermIndex - 2) years.push(summerYear);
@@ -104,9 +116,17 @@ export default function Plan() {
     setSelectedTerm(term);
   }
 
+  function updateErrorMessage(errMessage){
+    setErrorMessage(...errMessage)
+    setShowMessage(true)
+  }
+
   return (
     <main className="">
-      <div className="flex">{years}</div>
+      <div className="flex">
+        {years} 
+        {showMessage && <h3>{errorMessage}</h3>}
+      </div>
       <ColorPalette
         selectedCourses={selectedCourses}
         handleChange={changeSelectedTerm}
