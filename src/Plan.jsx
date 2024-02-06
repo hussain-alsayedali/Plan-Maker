@@ -17,12 +17,8 @@ export default function Plan() {
   const [selectedCourses, setSelectedCourses] = useState(
     InitializeCoursesObject
   );
-  // useEffect(() => {
-  //   setSelectedCourses(), [];
-  // });
+  const [showPreRequisite, setShowPreRequisite] = useState(false);
 
-  // console.log("selected courses : ", selectedCourses);
-  // making the plan
   let planData = swePlanData;
   const summerTermIndex = 6;
   let summerYear = (
@@ -60,51 +56,13 @@ export default function Plan() {
     if (!selectedTerm) {
       return;
     }
-    
+
     // check for preRequisit
-    let preReqNames = []
-    if(preReq){
-      // preReqNames = []
-      console.log("preReq",preReq)
-      for(let i = 0 ; i  < preReq.length ; i++){
-        preReqNames.push(preReq[i]["name"])
-      }
-      console.log(preReqNames)
 
-      let currentTerm = parseInt(selectedTerm.split("-")[1])
-      let currentYear = parseInt(selectedTerm.split("-")[0])
-
-      console.log("current term / year" , currentTerm , currentYear)
-      for(let i = 0 ; i < preReqNames.length ; i++){
-        
-        // let currentCourse = preReqNames[i]
-        for(let year = 0 ; year <= currentYear ; year++){
-          
-          for(let term = 0 ; term <3 ; term++){
-            if(year === currentYear && term === (currentTerm+1))
-              break;
-            let currentTermCourses = selectedCourses[`${year}-${term}`]
-
-            for(let i = 0 ; i < currentTermCourses.length ; i++){
-              let currentsSelectedCourseName = currentTermCourses[i]["name"]
-              if(preReqNames.includes(currentsSelectedCourseName)){
-                let indexOfCourse = preReqNames.indexOf(currentsSelectedCourseName)
-                preReqNames.splice(indexOfCourse, 1)
-              }
-            }
-            
-          }
-
-        }
-
-        
-      }
-    }
-    if(preReqNames.length > 0){
-      console.log("there is preReqfor this course",preReqNames)
+    if (preReq) {
+      console.log("there is preReqfor this course", preReqNames);
       return;
     }
-
 
     // if the course was selected in another term then remove it and add it to current term
     if (prevTerm !== "50-50") {

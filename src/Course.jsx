@@ -8,21 +8,65 @@ export default function Course(props) {
   const [courseTerm, setCurrentTerm] = useState("50-50");
   // let currnetTerm =
   function changeColor() {
-    let selectedTerm = props.selectedTerm
-    if(selectedTerm){
-      
+    let selectedTerm = props.selectedTerm;
+    if (selectedTerm) {
+      let preReqNames = [];
+      let preRequisite = props.Prerequisites;
+      let selectedCourses = props.selectedCourses;
+      if (preRequisite) {
+        // preReqNames = []
+        console.log("preReq", preRequisite);
+        for (let i = 0; i < preRequisite.length; i++) {
+          preReqNames.push(preRequisite[i]["name"]);
+        }
+        console.log(preReqNames);
+
+        let currentTerm = parseInt(selectedTerm.split("-")[1]);
+        let currentYear = parseInt(selectedTerm.split("-")[0]);
+
+        console.log("current term / year", currentTerm, currentYear);
+        for (let i = 0; i < preReqNames.length; i++) {
+          // let currentCourse = preReqNames[i]
+          for (let year = 0; year <= currentYear; year++) {
+            for (let term = 0; term < 3; term++) {
+              if (year === currentYear && term === currentTerm + 1) break;
+              let currentTermCourses = selectedCourses[`${year}-${term}`];
+
+              for (let i = 0; i < currentTermCourses.length; i++) {
+                let currentsSelectedCourseName = currentTermCourses[i]["name"];
+                if (preReqNames.includes(currentsSelectedCourseName)) {
+                  let indexOfCourse = preReqNames.indexOf(
+                    currentsSelectedCourseName
+                  );
+                  preReqNames.splice(indexOfCourse, 1);
+                }
+              }
+            }
+          }
+        }
+      }
+      const hasPreReq = preReqNames.length > 0;
+      if (hasPreReq) {
+        console.log("there is preReqfor this course", preReqNames);
+        return;
+      }
+
       // console.log(selectedTerm, props.selectedTerm);
-  
+
       const termSplited = selectedTerm.split("-");
       const yearSelected = termSplited[0];
       const termSelected = termSplited[1];
-  
+
       setBackGroundColor(colors[yearSelected][termSelected]);
       // console.log(colors[yearSelected][termSelected]);
-      props.addCourse(props.courseName, props.creditHours, courseTerm, props.Prerequisites);
+      props.addCourse(
+        props.courseName,
+        props.creditHours,
+        courseTerm,
+        hasPreReq
+      );
       setCurrentTerm(selectedTerm);
     }
-
   }
   // console.log("course" , props.courseName , props.Prerequisites)
   const opacity = 100;
