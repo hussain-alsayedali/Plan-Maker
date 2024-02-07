@@ -12,8 +12,7 @@ export default function Term(props) {
         hasLab={x.hasLab}
         hasRecitation={x.hasRecaitaiton}
         creditHours={x.credits}
-        Prerequisites = {x.Prerequisites}
-
+        Prerequisites={x.Prerequisites}
         addCourse={
           // props.handleAddCourse(x.name, x.credits, props.selectedTerm)
           // props.handleAddCourse(x.name, x.credits)
@@ -21,7 +20,7 @@ export default function Term(props) {
         }
         selectedCourses={props.selectedCourses}
         selectedTerm={props.selectedTerm}
-        handleErrorMessage = {props.handleErrorMessage}
+        handleErrorMessage={props.handleErrorMessage}
       />
     ));
   } else {
@@ -32,8 +31,7 @@ export default function Term(props) {
         hasLab={courses.hasLab}
         hasRecitation={courses.hasRecaitaiton}
         creditHours={courses.credits}
-        Prerequisites = {courses.Prerequisites}
-
+        Prerequisites={courses.Prerequisites}
         addCourse={
           // props.handleAddCourse(
           //   courses.name,
@@ -44,23 +42,21 @@ export default function Term(props) {
         }
         selectedCourses={props.selectedCourses}
         selectedTerm={props.selectedTerm}
-        handleErrorMessage = {props.handleErrorMessage}
+        handleErrorMessage={props.handleErrorMessage}
       />
     );
   }
-  let sumOfHours= 0
-  if(Array.isArray(courses)){
-    for(let i =0 ;i < courses.length ; i++){
-      sumOfHours += parseInt(courses[i].credits)
+  let sumOfHours = 0;
+  if (Array.isArray(courses)) {
+    for (let i = 0; i < courses.length; i++) {
+      sumOfHours += parseInt(courses[i].credits);
     }
   }
-  console.log(sumOfHours)
+  console.log(sumOfHours);
   return (
-    <div className="flex flex-col justify-between">
+    <div className="flex flex-col justify-between w-32 h-full">
       {/* <Course courseName = "moe" creditHours = {3} hasLab = {true} hasRecitation = {true} /> */}
-      <div>
-        {shownCourses}
-      </div>
+      <div>{shownCourses}</div>
       <h4 className="text-center">{sumOfHours} </h4>
     </div>
   );

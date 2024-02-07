@@ -12,14 +12,16 @@ export default function Year(props) {
       handleAddCourse={props.handleAddCourse}
       selectedTerm={props.selectedTerm}
       selectedCourses={props.selectedCourses}
-      handleErrorMessage = {props.handleErrorMessage}
+      handleErrorMessage={props.handleErrorMessage}
     />
   ));
 
   return (
-    <div className=" border border-black rounded mr-2">
-      <h2 className="text-center">{isNaN(props.yearNum) ? "summer" : "Year " + props.yearNum}</h2>
-      <div className="flex justify-center ">
+    <div className=" border border-black rounded h-full">
+      <h2 className="text-center">
+        {isNaN(props.yearNum) ? "summer" : "Year " + props.yearNum}
+      </h2>
+      <div className="flex justify-center h-full ">
         {/* <Term /> */}
         {shownTerms}
       </div>

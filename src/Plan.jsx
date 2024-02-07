@@ -17,8 +17,19 @@ export default function Plan() {
   const [selectedCourses, setSelectedCourses] = useState(
     InitializeCoursesObject
   );
+
+  useEffect(() => {
+    const storedSelectedCourses = localStorage.getItem("selectedCourses");
+    if (storedSelectedCourses) {
+      setSelectedCourses(JSON.parse(storedSelectedCourses));
+    }
+  }, []);
+  useEffect(() => {
+    console.log("updated selectedCourses", selectedCourses);
+  }, [selectedCourses]);
+
   const [errorMessage, setErrorMessage] = useState("");
-  const [showMessage, setShowMessage] = useState(false)
+  const [showMessage, setShowMessage] = useState(false);
 
   let planData = swePlanData;
   const summerTermIndex = 6;
@@ -30,19 +41,19 @@ export default function Plan() {
       plannedTerms={planData[summerTermIndex]}
       selectedCourses={selectedCourses}
       selectedTerm={selectedTerm}
-      handleErrorMessage = {updateErrorMessage}
+      handleErrorMessage={updateErrorMessage}
     />
   );
   let dataNoSummer = planData.toSpliced(summerTermIndex, 1);
 
-  useEffect(() =>{
+  useEffect(() => {
     const timer = setTimeout(() => {
       setShowMessage(false);
       setErrorMessage("");
     }, 4000);
 
     return () => clearTimeout(timer);
-  },[showMessage])
+  }, [showMessage]);
 
   let years = [];
   let j = 1;
@@ -55,7 +66,7 @@ export default function Plan() {
         plannedTerms={[dataNoSummer[i], dataNoSummer[i + 1]]}
         selectedTerm={selectedTerm}
         selectedCourses={selectedCourses}
-        handleErrorMessage = {updateErrorMessage}
+        handleErrorMessage={updateErrorMessage}
       />
     );
     if (i === summerTermIndex - 2) years.push(summerYear);
@@ -105,34 +116,36 @@ export default function Plan() {
       }
       return updated;
     });
+    localStorage.setItem("selectedCourses", JSON.stringify(selectedCourses));
   }
-
-  useEffect(() => {
-    console.log("updated selectedCourses", selectedCourses);
-  }, [selectedCourses]);
 
   function changeSelectedTerm(term) {
     // console.log("clicked change term");
     setSelectedTerm(term);
   }
 
-  function updateErrorMessage(errMessage, clickedCourseName){
-
-    setErrorMessage(clickedCourseName + " has unmeeted prerequisits for this which are : " +errMessage.join(", "))
-    setShowMessage(true)
+  function updateErrorMessage(errMessage, clickedCourseName) {
+    setErrorMessage(
+      clickedCourseName +
+        " has unmeeted prerequisits for this which are : " +
+        errMessage.join(", ")
+    );
+    setShowMessage(true);
   }
 
   return (
-    <main className="">
+    <main className="flex justify-center mt-8">
       <div className="flex">
-        {years} 
+        {years}
         <ColorPalette
-        selectedCourses={selectedCourses}
-        handleChange={changeSelectedTerm}
-        currentTerm={selectedTerm}
-      />
+          selectedCourses={selectedCourses}
+          handleChange={changeSelectedTerm}
+          currentTerm={selectedTerm}
+        />
       </div>
-      {showMessage && <h3 className="border-2 border-red-500 bg-red-200">{errorMessage}</h3>}
+      {showMessage && (
+        <h3 className="border-2 border-red-500 bg-red-200">{errorMessage}</h3>
+      )}
     </main>
   );
 }

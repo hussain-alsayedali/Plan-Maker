@@ -54,27 +54,27 @@ export default function ColorPalette(props) {
   // console.log("color palette ", props.selectedCourses);
 
   return (
-    <div className=" ">
-      <h3>
+    <div className="ml-8">
+      <h3 className="text-center">
         Select <FontAwesomeIcon icon={faPalette} />
       </h3>
-      <div className="grid grid-cols-4 gap-4 w-52">
+      <div className="grid grid-cols-4 gap-4 ">
         <h4></h4>
-        <h3>Term 1</h3>
-        <h3>Term 2</h3>
-        <h3>Summer</h3>
-        <h3>year 1</h3>
+        <h3 className="text-center">Term 1</h3>
+        <h3 className="text-center">Term 2</h3>
+        <h3 className="text-center">Summer</h3>
+        <h3 className="text-center">year 1</h3>
         {colorBlocks[0]}
 
-        <h3>year 2</h3>
+        <h3 className="text-center">year 2</h3>
         {colorBlocks[1]}
-        <h3>year 3</h3>
+        <h3 className="text-center">year 3</h3>
         {colorBlocks[2]}
 
-        <h3>year 4</h3>
+        <h3 className="text-center">year 4</h3>
         {colorBlocks[3]}
 
-        <h3>year 5</h3>
+        <h3 className="text-center">year 5</h3>
         {colorBlocks[4]}
       </div>
     </div>
