@@ -63,7 +63,7 @@ export default function Course(props) {
       let preRequisite = props.Prerequisites;
       let selectedCourses = props.selectedCourses;
       if (preRequisite) {
-        // preReqNames = []
+        preReqNames = []
         // console.log("preReq", preRequisite);
         for (let i = 0; i < preRequisite.length; i++) {
           preReqNames.push(preRequisite[i]["name"]);

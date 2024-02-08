@@ -73,6 +73,7 @@ export default function Plan() {
     j++;
   }
 
+
   function addCourse(courseName, credits, prevTerm, preReq) {
     console.log(selectedTerm);
     // if no term is selected then exit the function
@@ -83,25 +84,64 @@ export default function Plan() {
     // check for preRequisit
 
     if (preReq) {
-      console.log("there is preReqfor this course", preReqNames);
-      return;
+        preReqNames = []
+        // console.log("preReq", preRequisite);
+        for (let i = 0; i < preRequisite.length; i++) {
+          preReqNames.push(preRequisite[i]["name"]);
+        }
+        // console.log(preReqNames);
+
+        let currentTerm = parseInt(selectedTerm.split("-")[1]);
+        let currentYear = parseInt(selectedTerm.split("-")[0]);
+
+        // console.log("current term / year", currentTerm, currentYear);
+        for (let i = 0; i < preReqNames.length; i++) {
+          // let currentCourse = preReqNames[i]
+          for (let year = 0; year <= currentYear; year++) {
+            for (let term = 0; term < 3; term++) {
+              if (year === currentYear && term === currentTerm + 1) break;
+              let currentTermCourses = selectedCourses[`${year}-${term}`];
+
+              for (let i = 0; i < currentTermCourses.length; i++) {
+                let currentsSelectedCourseName = currentTermCourses[i]["name"];
+                if (preReqNames.includes(currentsSelectedCourseName)) {
+                  let indexOfCourse = preReqNames.indexOf(
+                    currentsSelectedCourseName
+                  );
+                  preReqNames.splice(indexOfCourse, 1);
+                }
+              }
+            }
+          }
+        }
+      
+      const hasPreReq = preReqNames.length > 0;
+      if(hasPreReq){
+        console.log("there is preReqfor this course", preReqNames);
+        return;
+      }
     }
 
     // if the course was selected in another term then remove it and add it to current term
     if (prevTerm !== "50-50") {
       setSelectedCourses((prevCourses) => {
         let updated = { ...prevCourses };
-        let prevTermList = updated[prevTerm];
-        for (let i = 0; i < prevTermList.length; i++) {
-          if (prevTermList[i]["name"] === courseName) {
-            prevTermList.splice(i, 1);
-            break;
+        let updatedKeys = Object.keys(updated)
+        
+        for(let i = 0  ; i < updatedKeys.length ; i++ ){
+          let prevTermList = updated[updatedKeys[i]];
+          for (let j = 0; j < prevTermList.length; j++) {
+            if (prevTermList[j]["name"] === courseName) {
+              prevTermList.splice(j, 1);
+              break;
+            }
           }
-        }
-        updated[prevTerm] = prevTermList;
+          updated[prevTerm] = prevTermList;
+  
+          return updated;
+        };
+        })
 
-        return updated;
-      });
     }
     // console.log("clicked add course " + courseName);
     setSelectedCourses((prevCourses) => {
