@@ -52,7 +52,7 @@ export default function Term(props) {
       sumOfHours += parseInt(courses[i].credits);
     }
   }
-  console.log(sumOfHours);
+  
   return (
     <div className="flex flex-col justify-between w-32 h-full">
       {/* <Course courseName = "moe" creditHours = {3} hasLab = {true} hasRecitation = {true} /> */}

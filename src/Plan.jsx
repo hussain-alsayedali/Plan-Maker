@@ -18,12 +18,12 @@ export default function Plan() {
     InitializeCoursesObject
   );
 
-  useEffect(() => {
-    const storedSelectedCourses = localStorage.getItem("selectedCourses");
-    if (storedSelectedCourses) {
-      setSelectedCourses(JSON.parse(storedSelectedCourses));
-    }
-  }, []);
+  // useEffect(() => {
+  //   const storedSelectedCourses = localStorage.getItem("selectedCourses");
+  //   if (storedSelectedCourses) {
+  //     setSelectedCourses(JSON.parse(storedSelectedCourses));
+  //   }
+  // }, []);
   useEffect(() => {
     console.log("updated selectedCourses", selectedCourses);
   }, [selectedCourses]);
@@ -134,17 +134,20 @@ export default function Plan() {
   }
 
   return (
-    <main className="flex justify-center mt-8">
-      <div className="flex">
-        {years}
-        <ColorPalette
-          selectedCourses={selectedCourses}
-          handleChange={changeSelectedTerm}
-          currentTerm={selectedTerm}
-        />
+    <main className="">
+      <div className="flex justify-center mt-8">
+        <div className="flex">
+          {years}
+          <ColorPalette
+            selectedCourses={selectedCourses}
+            handleChange={changeSelectedTerm}
+            currentTerm={selectedTerm}
+          />
+        </div>
       </div>
+
       {showMessage && (
-        <h3 className="border-2 border-red-500 bg-red-200">{errorMessage}</h3>
+        <h3 className="border-2 border-red-500 bg-red-200 place-self-end mt-8 text-center">{errorMessage}</h3>
       )}
     </main>
   );
