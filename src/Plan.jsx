@@ -15,7 +15,8 @@ for (let year = 0; year < 5; year++) {
 export default function Plan() {
   const [selectedTerm, setSelectedTerm] = useState("");
   const [selectedCourses, setSelectedCourses] = useState(
-    InitializeCoursesObject
+    JSON.parse(localStorage.getItem("selectedCourses")) ||
+      InitializeCoursesObject
   );
 
   // useEffect(() => {
@@ -73,9 +74,8 @@ export default function Plan() {
     j++;
   }
 
-
-  function addCourse(courseName, credits, prevTerm, preReq) {
-    console.log(selectedTerm);
+  function addCourse(courseName, credits, preRequisite) {
+    console.log("clicked seletc", selectedTerm);
     // if no term is selected then exit the function
     if (!selectedTerm) {
       return;
@@ -83,67 +83,69 @@ export default function Plan() {
 
     // check for preRequisit
 
-    if (preReq) {
-        preReqNames = []
-        // console.log("preReq", preRequisite);
-        for (let i = 0; i < preRequisite.length; i++) {
-          preReqNames.push(preRequisite[i]["name"]);
-        }
-        // console.log(preReqNames);
+    if (preRequisite) {
+      let preReqNames = [];
+      // console.log("preReq", preRequisite);
+      for (let i = 0; i < preRequisite.length; i++) {
+        preReqNames.push(preRequisite[i]["name"]);
+      }
+      // console.log(preReqNames);
 
-        let currentTerm = parseInt(selectedTerm.split("-")[1]);
-        let currentYear = parseInt(selectedTerm.split("-")[0]);
+      let currentTerm = parseInt(selectedTerm.split("-")[1]);
+      let currentYear = parseInt(selectedTerm.split("-")[0]);
 
-        // console.log("current term / year", currentTerm, currentYear);
-        for (let i = 0; i < preReqNames.length; i++) {
-          // let currentCourse = preReqNames[i]
-          for (let year = 0; year <= currentYear; year++) {
-            for (let term = 0; term < 3; term++) {
-              if (year === currentYear && term === currentTerm + 1) break;
-              let currentTermCourses = selectedCourses[`${year}-${term}`];
+      console.log("current term / year", currentTerm, currentYear);
+      for (let i = 0; i < preReqNames.length; i++) {
+        // let currentCourse = preReqNames[i]
+        for (let year = 0; year <= currentYear; year++) {
+          for (let term = 0; term < 3; term++) {
+            if (year === currentYear && term === currentTerm) break;
+            let currentTermCourses = selectedCourses[`${year}-${term}`];
 
-              for (let i = 0; i < currentTermCourses.length; i++) {
-                let currentsSelectedCourseName = currentTermCourses[i]["name"];
-                if (preReqNames.includes(currentsSelectedCourseName)) {
-                  let indexOfCourse = preReqNames.indexOf(
-                    currentsSelectedCourseName
-                  );
-                  preReqNames.splice(indexOfCourse, 1);
-                }
+            for (let i = 0; i < currentTermCourses.length; i++) {
+              let currentsSelectedCourseName = currentTermCourses[i]["name"];
+              if (preReqNames.includes(currentsSelectedCourseName)) {
+                let indexOfCourse = preReqNames.indexOf(
+                  currentsSelectedCourseName
+                );
+                preReqNames.splice(indexOfCourse, 1);
               }
             }
           }
         }
-      
+      }
+
       const hasPreReq = preReqNames.length > 0;
-      if(hasPreReq){
+      if (hasPreReq) {
         console.log("there is preReqfor this course", preReqNames);
+        updateErrorMessage(courseName, preReqNames);
         return;
       }
     }
 
-    // if the course was selected in another term then remove it and add it to current term
-    if (prevTerm !== "50-50") {
-      setSelectedCourses((prevCourses) => {
-        let updated = { ...prevCourses };
-        let updatedKeys = Object.keys(updated)
-        
-        for(let i = 0  ; i < updatedKeys.length ; i++ ){
-          let prevTermList = updated[updatedKeys[i]];
-          for (let j = 0; j < prevTermList.length; j++) {
-            if (prevTermList[j]["name"] === courseName) {
-              prevTermList.splice(j, 1);
-              break;
-            }
-          }
-          updated[prevTerm] = prevTermList;
-  
-          return updated;
-        };
-        })
+    // if the course was selected in another term then remove it.
 
-    }
+    setSelectedCourses((prevCourses) => {
+      let updated = { ...prevCourses };
+      let updatedKeys = Object.keys(updated);
+
+      for (let i = 0; i < updatedKeys.length; i++) {
+        let prevTermList = updated[updatedKeys[i]];
+        for (let j = 0; j < prevTermList.length; j++) {
+          if (prevTermList[j]["name"] === courseName) {
+            prevTermList.splice(j, 1);
+            break;
+          }
+        }
+        updated[updatedKeys[i]] = prevTermList;
+
+        return updated;
+      }
+    });
+
     // console.log("clicked add course " + courseName);
+
+    // add the course
     setSelectedCourses((prevCourses) => {
       let updated = { ...prevCourses };
       // if (!updated[selectedTerm]) {
@@ -151,12 +153,9 @@ export default function Plan() {
       // }
       if (!updated[selectedTerm].some((course) => course.name === courseName)) {
         updated[selectedTerm].push({ name: courseName, credits: credits });
-      } else {
-        // console.log("course already added");
       }
       return updated;
     });
-    localStorage.setItem("selectedCourses", JSON.stringify(selectedCourses));
   }
 
   function changeSelectedTerm(term) {
@@ -164,14 +163,18 @@ export default function Plan() {
     setSelectedTerm(term);
   }
 
-  function updateErrorMessage(errMessage, clickedCourseName) {
+  function updateErrorMessage(courseName, unmeetedPreReq) {
     setErrorMessage(
-      clickedCourseName +
+      courseName +
         " has unmeeted prerequisits for this which are : " +
-        errMessage.join(", ")
+        unmeetedPreReq.join(", ")
     );
     setShowMessage(true);
   }
+
+  useEffect(() => {
+    localStorage.setItem("selectedCourses", JSON.stringify(selectedCourses));
+  }, [selectedCourses]);
 
   return (
     <main className="">
@@ -187,7 +190,9 @@ export default function Plan() {
       </div>
 
       {showMessage && (
-        <h3 className="border-2 border-red-500 bg-red-200 place-self-end mt-8 text-center">{errorMessage}</h3>
+        <h3 className="border-2 border-red-500 bg-red-200 place-self-end mt-8 text-center">
+          {errorMessage}
+        </h3>
       )}
     </main>
   );
