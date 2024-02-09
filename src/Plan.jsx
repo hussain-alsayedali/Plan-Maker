@@ -18,12 +18,12 @@ export default function Plan() {
     InitializeCoursesObject
   );
 
-  useEffect(() => {
-    const storedSelectedCourses = localStorage.getItem("selectedCourses");
-    if (storedSelectedCourses) {
-      setSelectedCourses(JSON.parse(storedSelectedCourses));
-    }
-  }, []);
+  // useEffect(() => {
+  //   const storedSelectedCourses = localStorage.getItem("selectedCourses");
+  //   if (storedSelectedCourses) {
+  //     setSelectedCourses(JSON.parse(storedSelectedCourses));
+  //   }
+  // }, []);
   useEffect(() => {
     console.log("updated selectedCourses", selectedCourses);
   }, [selectedCourses]);
