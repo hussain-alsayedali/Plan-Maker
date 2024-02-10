@@ -8,7 +8,7 @@ import ColorBlock from "./ColorBlock";
 import ColorPalette from "./ColorPalette";
 import Side from "./Side";
 import Plan from "./Plan";
-
+//
 function App() {
   const planRef = useRef(null);
 
