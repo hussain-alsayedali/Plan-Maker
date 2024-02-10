@@ -1,5 +1,5 @@
 import "./output.css";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import Year from "./Year";
 import swePlanData from "./swePlanNoClass.json";
 import ColorPalette from "./ColorPalette";
@@ -13,6 +13,7 @@ for (let year = 0; year < 5; year++) {
 }
 
 export default function Plan() {
+  // const planRef = useRef(null);
   const [selectedTerm, setSelectedTerm] = useState("");
   const [selectedCourses, setSelectedCourses] = useState(
     JSON.parse(localStorage.getItem("selectedCourses")) ||
