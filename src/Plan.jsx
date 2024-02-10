@@ -138,9 +138,8 @@ export default function Plan() {
           }
         }
         updated[updatedKeys[i]] = prevTermList;
-
-        return updated;
       }
+      return updated;
     });
 
     // console.log("clicked add course " + courseName);

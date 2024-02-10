@@ -838,7 +838,7 @@
   ],
   [
     {
-      "name": "SWE XXX",
+      "name": "SWE XXX-1",
       "credits": 3,
       "department": "Software Engineering Department",
       "hasRecaitaiton": false,
@@ -848,7 +848,7 @@
       "teachers": null
     },
     {
-      "name": "SWE XXX",
+      "name": "SWE XXX-2",
       "credits": 3,
       "department": "Software Engineering Department",
       "hasRecaitaiton": false,
@@ -1020,7 +1020,7 @@
   ],
   [
     {
-      "name": "SWE XXX",
+      "name": "SWE XXX-3",
       "credits": 3,
       "department": "Software Engineering Department",
       "hasRecaitaiton": false,
@@ -1030,7 +1030,7 @@
       "teachers": null
     },
     {
-      "name": "SWE XXX",
+      "name": "SWE XXX-4",
       "credits": 3,
       "department": "Software Engineering Department",
       "hasRecaitaiton": false,
