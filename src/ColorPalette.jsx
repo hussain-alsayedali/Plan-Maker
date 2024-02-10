@@ -39,19 +39,15 @@ export default function ColorPalette(props) {
           bgColor={colors[i][j]}
           key={`${i}-${j}`}
           id={`${i}-${j}`}
-          // onClick={}
           handleChange={() => props.handleChange(`${i}-${j}`)}
           selected={props.currentTerm === `${i}-${j}`}
         />
       );
-      // console.log("cuurent blocks", currentArrayBlocks);
+
       currentArrayBlocks.push(currentBlock);
     }
     colorBlocks[i] = currentArrayBlocks;
   }
-
-  // console.log("current array block", colorBlocks);
-  // console.log("color palette ", props.selectedCourses);
 
   return (
     <div className="ml-8">

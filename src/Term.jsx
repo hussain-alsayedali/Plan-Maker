@@ -13,10 +13,8 @@ export default function Term(props) {
         hasRecitation={x.hasRecaitaiton}
         creditHours={x.credits}
         Prerequisites={x.Prerequisites}
-        addCourse={
-          () => props.handleAddCourse(x.name, x.credits, x.Prerequisites)
-          // props.handleAddCourse(x.name, x.credits)
-          // props.handleAddCourse
+        addCourse={() =>
+          props.handleAddCourse(x.name, x.credits, x.Prerequisites)
         }
         selectedCourses={props.selectedCourses}
         selectedTerm={props.selectedTerm}
@@ -33,11 +31,6 @@ export default function Term(props) {
         creditHours={courses.credits}
         Prerequisites={courses.Prerequisites}
         addCourse={() =>
-          // props.handleAddCourse(
-          //   courses.name,
-          //   courses.credits
-          //   // props.selectedTerm
-          // )
           props.handleAddCourse(
             courses.name,
             courses.credits,
@@ -59,7 +52,6 @@ export default function Term(props) {
 
   return (
     <div className="flex flex-col justify-between w-32 h-full">
-      {/* <Course courseName = "moe" creditHours = {3} hasLab = {true} hasRecitation = {true} /> */}
       <div>{shownCourses}</div>
       <h4 className="text-center">{sumOfHours} </h4>
     </div>

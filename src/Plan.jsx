@@ -142,12 +142,11 @@ export default function Plan() {
     // add the course
     setSelectedCourses((prevCourses) => {
       let updated = { ...prevCourses };
-      // if (!updated[selectedTerm]) {
-      //   updated[selectedTerm] = []; // Initialize the array if it doesn't exist
+      // if (!updated[selectedTerm].some((course) => course.name === courseName)) {
+      //   updated[selectedTerm].push({ name: courseName, credits: credits });
       // }
-      if (!updated[selectedTerm].some((course) => course.name === courseName)) {
-        updated[selectedTerm].push({ name: courseName, credits: credits });
-      }
+      updated[selectedTerm].push({ name: courseName, credits: credits });
+
       return updated;
     });
   }
@@ -171,7 +170,7 @@ export default function Plan() {
   }, [selectedCourses]);
 
   return (
-    <main id="plan-container" ref={planRef} className="">
+    <main id="plan-container" className="">
       <div className="flex justify-center mt-8">
         <div className="flex">
           {years}

@@ -1,5 +1,5 @@
 import { useRef } from "react";
-
+import React, { createContext, useState } from "react";
 import "./output.css";
 import Course from "./Course";
 import Term from "./Term";

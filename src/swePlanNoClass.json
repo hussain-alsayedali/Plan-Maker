@@ -585,16 +585,6 @@
       "Prerequisites": null,
       "preStanding": "junior",
       "teachers": null
-    },
-    {
-      "name": "BUS 200",
-      "credits": 3,
-      "department": "Business School",
-      "hasRecaitaiton": false,
-      "hasLab": false,
-      "Prerequisites": null,
-      "preStanding": null,
-      "teachers": null
     }
   ],
   [
@@ -777,6 +767,16 @@
           "teachers": null
         }
       ],
+      "preStanding": null,
+      "teachers": null
+    },
+    {
+      "name": "BUS 200",
+      "credits": 3,
+      "department": "Business School",
+      "hasRecaitaiton": false,
+      "hasLab": false,
+      "Prerequisites": null,
       "preStanding": null,
       "teachers": null
     }
