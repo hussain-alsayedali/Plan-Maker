@@ -1,5 +1,6 @@
 import "./output.css";
 import { useState, useEffect, useRef } from "react";
+import html2canvas from "html2canvas";
 import Year from "./Year";
 import swePlanData from "./swePlanNoClass.json";
 import ColorPalette from "./ColorPalette";
@@ -13,19 +14,12 @@ for (let year = 0; year < 5; year++) {
 }
 
 export default function Plan() {
-  // const planRef = useRef(null);
   const [selectedTerm, setSelectedTerm] = useState("");
   const [selectedCourses, setSelectedCourses] = useState(
     JSON.parse(localStorage.getItem("selectedCourses")) ||
       InitializeCoursesObject
   );
 
-  // useEffect(() => {
-  //   const storedSelectedCourses = localStorage.getItem("selectedCourses");
-  //   if (storedSelectedCourses) {
-  //     setSelectedCourses(JSON.parse(storedSelectedCourses));
-  //   }
-  // }, []);
   useEffect(() => {
     console.log("updated selectedCourses", selectedCourses);
   }, [selectedCourses]);
@@ -177,7 +171,7 @@ export default function Plan() {
   }, [selectedCourses]);
 
   return (
-    <main className="">
+    <main id="plan-container" ref={planRef} className="">
       <div className="flex justify-center mt-8">
         <div className="flex">
           {years}
