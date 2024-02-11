@@ -29,6 +29,7 @@ export default function ColorPalette(props) {
       handleChange={() => props.handleChange("clear")}
       id="clear"
       key="clear"
+      width="big"
     />
   );
 

@@ -70,9 +70,41 @@ export default function Plan() {
   }
 
   function addCourse(courseName, credits, preRequisite) {
-    console.log("clicked seletc", selectedTerm);
+    // console.log("clicked seletc", selectedTerm);
     // if no term is selected then exit the function
-    if (!selectedTerm || selectedTerm === "clear") {
+    if (!selectedTerm) {
+      return;
+    }
+
+    // if the term selected is clear then remove the selected course and remove everything after it
+    if (selectedTerm === "clear") {
+      console.log("slected ter m is cle ");
+      setSelectedCourses((prevCourses) => {
+        // let currentTerm = parseInt(selectedTerm.split("-")[1]);
+        // let currentYear = parseInt(selectedTerm.split("-")[0]);
+        let updated = { ...prevCourses };
+        let reached = false;
+        for (let year = 0; year < 5; year++) {
+          for (let term = 0; term < 3; term++) {
+            let currentTerm = updated[`${year}-${term}`];
+            if (reached) {
+              // console.log("i reached", year, term);
+              updated[`${year}-${term}`] = [];
+              console.log(updated);
+            } else {
+              for (let i = 0; i < currentTerm.length; i++) {
+                if (currentTerm[i]["name"] === courseName) {
+                  currentTerm.splice(i, 1);
+                  updated[`${year}-${term}`] = currentTerm;
+                  reached = true;
+                }
+              }
+            }
+          }
+        }
+        console.log(updated);
+        return { ...updated };
+      });
       return;
     }
 
@@ -142,10 +174,10 @@ export default function Plan() {
     // add the course
     setSelectedCourses((prevCourses) => {
       let updated = { ...prevCourses };
-      // if (!updated[selectedTerm].some((course) => course.name === courseName)) {
-      //   updated[selectedTerm].push({ name: courseName, credits: credits });
-      // }
-      updated[selectedTerm].push({ name: courseName, credits: credits });
+      if (!updated[selectedTerm].some((course) => course.name === courseName)) {
+        updated[selectedTerm].push({ name: courseName, credits: credits });
+      }
+      // updated[selectedTerm].push({ name: courseName, credits: credits });
 
       return updated;
     });
