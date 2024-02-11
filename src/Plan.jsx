@@ -204,7 +204,7 @@ export default function Plan() {
   return (
     <main id="plan-container" className="">
       <div className="flex justify-center mt-8">
-        <div className="flex">
+        <div className="flex max-md:flex-col">
           {years}
           <ColorPalette
             selectedCourses={selectedCourses}

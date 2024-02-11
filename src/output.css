@@ -48344,3 +48344,13 @@ video {
   --tw-text-opacity: 1;
   color: rgb(255 255 255 / var(--tw-text-opacity));
 }
+
+@media not all and (min-width: 768px) {
+  .max-md\:mt-6 {
+    margin-top: 1.5rem;
+  }
+
+  .max-md\:flex-col {
+    flex-direction: column;
+  }
+}
