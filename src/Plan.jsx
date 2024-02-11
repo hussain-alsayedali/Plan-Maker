@@ -72,7 +72,7 @@ export default function Plan() {
   function addCourse(courseName, credits, preRequisite) {
     console.log("clicked seletc", selectedTerm);
     // if no term is selected then exit the function
-    if (!selectedTerm) {
+    if (!selectedTerm || selectedTerm === "clear") {
       return;
     }
 

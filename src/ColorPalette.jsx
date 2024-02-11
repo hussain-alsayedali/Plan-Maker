@@ -21,6 +21,16 @@ for (let i = 0; i < 5; i++) {
 // console.log("meow ", colors[0]);
 export default function ColorPalette(props) {
   let colorBlocks = {};
+  let clearBlock = (
+    <ColorBlock
+      hours="clear"
+      bgColor="white"
+      selected={props.currentTerm === "clear"}
+      handleChange={() => props.handleChange("clear")}
+      id="clear"
+      key="clear"
+    />
+  );
 
   for (let i = 0; i < colorsKeys.length; i++) {
     let currentArrayBlocks = [];
@@ -59,19 +69,21 @@ export default function ColorPalette(props) {
         <h3 className="text-center">Term 1</h3>
         <h3 className="text-center">Term 2</h3>
         <h3 className="text-center">Summer</h3>
-        <h3 className="text-center">year 1</h3>
+        <h3 className="text-center">Freshman</h3>
         {colorBlocks[0]}
 
-        <h3 className="text-center">year 2</h3>
+        <h3 className="text-center">Sophmore</h3>
         {colorBlocks[1]}
-        <h3 className="text-center">year 3</h3>
+        <h3 className="text-center">Junior</h3>
         {colorBlocks[2]}
 
-        <h3 className="text-center">year 4</h3>
+        <h3 className="text-center">Senior</h3>
         {colorBlocks[3]}
 
-        <h3 className="text-center">year 5</h3>
+        <h3 className="text-center">Extra</h3>
         {colorBlocks[4]}
+        <h3 className="text-center">Clear</h3>
+        <div className="col-span-3">{clearBlock}</div>
       </div>
     </div>
   );
