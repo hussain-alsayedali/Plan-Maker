@@ -205,6 +205,9 @@ export default function Plan() {
 
   return (
     <main id="plan-container" className="">
+      <PDFViewer>
+        <PlanPDFGenerator selectedCourses={selectedCourses} />
+      </PDFViewer>
       <div className="flex justify-center mt-8">
         <div className="flex max-md:flex-col">
           {years}
@@ -215,7 +218,7 @@ export default function Plan() {
           />
         </div>
       </div>
-      <PlanPDFGenerator selectedCourses={selectedCourses} />
+
       {showMessage && (
         <h3 className="border-2 border-red-500 bg-red-200 place-self-end mt-8 text-center">
           {errorMessage}
