@@ -18,9 +18,6 @@ function App() {
     <div className="flex  flex-col">
       <Plan />
       <Side />
-      <PDFViewer>
-        <PlanPDFGenerator />
-      </PDFViewer>
     </div>
   );
 }

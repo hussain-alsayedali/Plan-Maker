@@ -4,6 +4,8 @@ import html2canvas from "html2canvas";
 import Year from "./Year";
 import swePlanData from "../plans/SWEPlan.json";
 import ColorPalette from "./ColorPalette";
+import PlanPDFGenerator from "./PlanPDFGenerator";
+import { PDFViewer } from "@react-pdf/renderer";
 
 let InitializeCoursesObject = {};
 for (let year = 0; year < 5; year++) {
@@ -213,7 +215,7 @@ export default function Plan() {
           />
         </div>
       </div>
-
+      <PlanPDFGenerator selectedCourses={selectedCourses} />
       {showMessage && (
         <h3 className="border-2 border-red-500 bg-red-200 place-self-end mt-8 text-center">
           {errorMessage}

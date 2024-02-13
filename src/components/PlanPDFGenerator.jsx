@@ -15,15 +15,13 @@ const styles = StyleSheet.create({
 });
 
 // Create Document Component
-export default function PlanPDFGenerator() {
+export default function PlanPDFGenerator(props) {
+  console.log("plan pdf generator", props.selectedCourses);
   return (
     <Document>
       <Page size="A4" style={styles.page}>
         <View style={styles.section}>
-          <Text>Section #1</Text>
-        </View>
-        <View style={styles.section}>
-          <Text>Section #2</Text>
+          <Text>term {props.selectedCourses["0-0"][0].name}</Text>
         </View>
       </Page>
     </Document>
