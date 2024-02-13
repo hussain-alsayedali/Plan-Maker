@@ -2,7 +2,7 @@ import "./output.css";
 import { useState, useEffect, useRef } from "react";
 import html2canvas from "html2canvas";
 import Year from "./Year";
-import swePlanData from "./swePlanNoClass.json";
+import swePlanData from "../plans/SWEPlan.json";
 import ColorPalette from "./ColorPalette";
 
 let InitializeCoursesObject = {};
