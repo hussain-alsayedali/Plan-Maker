@@ -23,27 +23,12 @@ export default function Plan() {
       InitializeCoursesObject
   );
 
-  console.log("plan selected courses", selectedCourses);
   useEffect(() => {
     console.log("updated selectedCourses", selectedCourses);
   }, [selectedCourses]);
 
   const [errorMessage, setErrorMessage] = useState("");
   const [showMessage, setShowMessage] = useState(false);
-
-  let planData = swePlanData;
-  const summerTermIndex = 6;
-  let summerYear = (
-    <Year
-      key={"summer"}
-      yearNum={"summer"}
-      handleAddCourse={addCourse}
-      plannedTerms={planData[summerTermIndex]}
-      selectedTerm={selectedTerm}
-      handleErrorMessage={updateErrorMessage}
-    />
-  );
-  let dataNoSummer = planData.toSpliced(summerTermIndex, 1);
 
   useEffect(() => {
     const timer = setTimeout(() => {
@@ -54,6 +39,17 @@ export default function Plan() {
     return () => clearTimeout(timer);
   }, [showMessage]);
 
+  let planData = swePlanData;
+  const summerTermIndex = 6;
+  let summerYear = (
+    <Year
+      key={"summer"}
+      yearNum={"summer"}
+      handleAddCourse={addCourse}
+      plannedTerms={planData[summerTermIndex]}
+    />
+  );
+  let dataNoSummer = planData.toSpliced(summerTermIndex, 1);
   let years = [];
   let j = 1;
   for (let i = 0; i < dataNoSummer.length; i = i + 2) {
@@ -63,8 +59,6 @@ export default function Plan() {
         yearNum={j}
         handleAddCourse={addCourse}
         plannedTerms={[dataNoSummer[i], dataNoSummer[i + 1]]}
-        selectedTerm={selectedTerm}
-        handleErrorMessage={updateErrorMessage}
       />
     );
     if (i === summerTermIndex - 2) years.push(summerYear);

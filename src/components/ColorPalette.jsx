@@ -2,23 +2,16 @@ import "./output.css";
 import ColorBlock from "./ColorBlock";
 import { faPalette } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-const opacity = 100;
+
 const colors = {
-  0: ["red-", "zinc-", "yellow-"],
-  1: ["orange-", "teal-", "cyan-"],
-  2: ["rose-", "pink-", "fuchsia-"],
-  3: ["violet-", "emerald-", "stone-"],
-  4: ["indigo-", "sky-", "lime-"],
+  0: ["red-100", "zinc-100", "yellow-100"],
+  1: ["orange-200", "teal-200", "cyan-200"],
+  2: ["rose-300", "pink-300", "fuchsia-300"],
+  3: ["violet-400", "emerald-400", "stone-400"],
+  4: ["indigo-500", "sky-500", "lime-500"],
 };
 const colorsKeys = Object.keys(colors);
 
-for (let i = 0; i < 5; i++) {
-  for (let j = 0; j < 3; j++) {
-    colors[i][j] = `${colors[i][j]}${opacity * (i + 1)}`;
-  }
-}
-
-// console.log("meow ", colors[0]);
 export default function ColorPalette(props) {
   let colorBlocks = {};
   let clearBlock = (

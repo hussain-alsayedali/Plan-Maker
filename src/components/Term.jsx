@@ -16,8 +16,6 @@ export default function Term(props) {
         addCourse={() =>
           props.handleAddCourse(x.name, x.credits, x.Prerequisites)
         }
-        selectedTerm={props.selectedTerm}
-        handleErrorMessage={props.handleErrorMessage}
       />
     ));
   } else {
@@ -36,8 +34,6 @@ export default function Term(props) {
             courses.Prerequisites
           )
         }
-        selectedTerm={props.selectedTerm}
-        handleErrorMessage={props.handleErrorMessage}
       />
     );
   }

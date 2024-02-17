@@ -15,7 +15,6 @@ function App() {
   return (
     <div className="flex  flex-col">
       <Plan />
-      {/* <Side /> */}
     </div>
   );
 }

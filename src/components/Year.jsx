@@ -10,8 +10,6 @@ export default function Year(props) {
       courses={x}
       yearNum={props.yearNum}
       handleAddCourse={props.handleAddCourse}
-      selectedTerm={props.selectedTerm}
-      handleErrorMessage={props.handleErrorMessage}
     />
   ));
 
@@ -20,10 +18,7 @@ export default function Year(props) {
       <h2 className="text-center">
         {isNaN(props.yearNum) ? "summer" : "Year " + props.yearNum}
       </h2>
-      <div className="flex justify-center h-full ">
-        {/* <Term /> */}
-        {shownTerms}
-      </div>
+      <div className="flex justify-center h-full ">{shownTerms}</div>
     </div>
   );
 }
