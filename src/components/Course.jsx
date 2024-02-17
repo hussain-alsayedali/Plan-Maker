@@ -21,10 +21,9 @@ for (let i = 0; i < 5; i++) {
 
 export default function Course(props) {
   let courseBackgroundColor = "";
+  let courses = useContext(SelectedCoursesContext);
 
   function findCurrentTerm() {
-    let courses = useContext(SelectedCoursesContext);
-
     let coursesKeys = Object.keys(courses);
 
     for (let i = 0; i < coursesKeys.length; i++) {

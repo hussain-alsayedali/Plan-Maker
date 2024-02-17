@@ -13,13 +13,23 @@ import "./output.css";
 // Create styles
 const styles = StyleSheet.create({
   page: {
-    flexDirection: "column",
+    flexDirection: "row",
     backgroundColor: "white",
   },
   section: {
-    margin: 10,
-    padding: 10,
+    height: 100,
+    textAlign: "center",
+    marginLeft: 5,
+    padding: 5,
     flexGrow: 1,
+  },
+  courseContainer: {
+    flexDirection: "row",
+    justifyContent: "flex-start",
+    alignItems: "center",
+  },
+  courseName: {
+    marginRight: 5,
   },
 });
 
@@ -37,15 +47,21 @@ export default function PlanPDFGenerator(props) {
       let currentView;
       let headerText = <Text>{`${year}-${term}`}</Text>;
       currentSemesterTexts.push(headerText);
+      let sumOfHoursCurrentTerm = 0;
+
       for (let i = 0; i < currentSemester.length; i++) {
         let currentText = (
           <Text>
             {currentSemester[i].name} {currentSemester[i].credits}
           </Text>
         );
+        sumOfHoursCurrentTerm += currentSemester[i].credits;
         currentSemesterTexts.push(currentText);
       }
-      currentView = <View>{...currentSemesterTexts}</View>;
+      currentSemesterTexts.push(<Text>Sum : {sumOfHoursCurrentTerm}</Text>);
+      currentView = (
+        <View style={styles.section}>{...currentSemesterTexts}</View>
+      );
       currentYearViews.push(currentView);
     }
     views.push(currentYearViews);
