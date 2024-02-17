@@ -12,12 +12,10 @@ import PlanPDFGenerator from "./PlanPDFGenerator";
 import { PDFViewer } from "@react-pdf/renderer";
 //
 function App() {
-  const planRef = useRef(null);
-
   return (
     <div className="flex  flex-col">
       <Plan />
-      <Side />
+      {/* <Side /> */}
     </div>
   );
 }

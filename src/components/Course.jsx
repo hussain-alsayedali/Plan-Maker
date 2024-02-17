@@ -1,5 +1,6 @@
 import "./output.css";
-import { useState } from "react";
+import { useContext, useState } from "react";
+import { SelectedCoursesContext } from "../contexts/CoursesContext";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faComputer } from "@fortawesome/free-solid-svg-icons";
 import { faPen } from "@fortawesome/free-solid-svg-icons";
@@ -22,8 +23,9 @@ export default function Course(props) {
   let courseBackgroundColor = "";
 
   function findCurrentTerm() {
-    let courses = props.selectedCourses;
-    let coursesKeys = Object.keys(props.selectedCourses);
+    let courses = useContext(SelectedCoursesContext);
+
+    let coursesKeys = Object.keys(courses);
 
     for (let i = 0; i < coursesKeys.length; i++) {
       let currentTermCourses = courses[coursesKeys[i]];

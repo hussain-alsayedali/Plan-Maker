@@ -160,7 +160,7 @@
   [
     {
       "name": "Math 201",
-      "credits": 4,
+      "credits": 3,
       "department": "Math Department",
       "hasRecaitaiton": false,
       "hasLab": false,
@@ -269,16 +269,6 @@
       "credits": 4,
       "department": "Chemical Department",
       "hasRecaitaiton": true,
-      "hasLab": false,
-      "Prerequisites": null,
-      "preStanding": null,
-      "teachers": null
-    },
-    {
-      "name": "IAS 212",
-      "credits": 2,
-      "department": "Islamic and Arabic Department",
-      "hasRecaitaiton": false,
       "hasLab": false,
       "Prerequisites": null,
       "preStanding": null,
@@ -421,6 +411,16 @@
           "teachers": null
         }
       ],
+      "preStanding": null,
+      "teachers": null
+    },
+    {
+      "name": "IAS 212",
+      "credits": 2,
+      "department": "Islamic and Arabic Department",
+      "hasRecaitaiton": false,
+      "hasLab": false,
+      "Prerequisites": null,
       "preStanding": null,
       "teachers": null
     }

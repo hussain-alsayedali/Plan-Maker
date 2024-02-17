@@ -1,9 +1,10 @@
 import "./output.css";
-import { useState, useEffect, useRef } from "react";
-import html2canvas from "html2canvas";
+import { useState, useEffect, useRef, useContext } from "react";
+import { SelectedCoursesContext } from "../contexts/CoursesContext";
 import Year from "./Year";
 import swePlanData from "../plans/SWEPlan.json";
 import ColorPalette from "./ColorPalette";
+import Side from "./Side";
 import PlanPDFGenerator from "./PlanPDFGenerator";
 import { PDFViewer } from "@react-pdf/renderer";
 
@@ -22,6 +23,7 @@ export default function Plan() {
       InitializeCoursesObject
   );
 
+  console.log("plan selected courses", selectedCourses);
   useEffect(() => {
     console.log("updated selectedCourses", selectedCourses);
   }, [selectedCourses]);
@@ -37,7 +39,6 @@ export default function Plan() {
       yearNum={"summer"}
       handleAddCourse={addCourse}
       plannedTerms={planData[summerTermIndex]}
-      selectedCourses={selectedCourses}
       selectedTerm={selectedTerm}
       handleErrorMessage={updateErrorMessage}
     />
@@ -63,7 +64,6 @@ export default function Plan() {
         handleAddCourse={addCourse}
         plannedTerms={[dataNoSummer[i], dataNoSummer[i + 1]]}
         selectedTerm={selectedTerm}
-        selectedCourses={selectedCourses}
         handleErrorMessage={updateErrorMessage}
       />
     );
@@ -72,25 +72,19 @@ export default function Plan() {
   }
 
   function addCourse(courseName, credits, preRequisite) {
-    // console.log("clicked seletc", selectedTerm);
-    // if no term is selected then exit the function
     if (!selectedTerm) {
       return;
     }
 
-    // if the term selected is clear then remove the selected course and remove everything after it
     if (selectedTerm === "clear") {
       console.log("slected ter m is cle ");
       setSelectedCourses((prevCourses) => {
-        // let currentTerm = parseInt(selectedTerm.split("-")[1]);
-        // let currentYear = parseInt(selectedTerm.split("-")[0]);
         let updated = { ...prevCourses };
         let reached = false;
         for (let year = 0; year < 5; year++) {
           for (let term = 0; term < 3; term++) {
             let currentTerm = updated[`${year}-${term}`];
             if (reached) {
-              // console.log("i reached", year, term);
               updated[`${year}-${term}`] = [];
               console.log(updated);
             } else {
@@ -204,26 +198,31 @@ export default function Plan() {
   }, [selectedCourses]);
 
   return (
-    <main id="plan-container" className="">
-      <PDFViewer>
-        <PlanPDFGenerator selectedCourses={selectedCourses} />
-      </PDFViewer>
-      <div className="flex justify-center mt-8">
-        <div className="flex max-md:flex-col">
-          {years}
-          <ColorPalette
-            selectedCourses={selectedCourses}
-            handleChange={changeSelectedTerm}
-            currentTerm={selectedTerm}
-          />
-        </div>
-      </div>
+    <div className="">
+      <SelectedCoursesContext.Provider value={selectedCourses}>
+        <main id="plan-container">
+          <div className="flex justify-center mt-8">
+            <div className="flex max-md:flex-col">
+              {years}
+              <ColorPalette
+                selectedCourses={selectedCourses}
+                handleChange={changeSelectedTerm}
+                currentTerm={selectedTerm}
+              />
+            </div>
+          </div>
 
-      {showMessage && (
-        <h3 className="border-2 border-red-500 bg-red-200 place-self-end mt-8 text-center">
-          {errorMessage}
-        </h3>
-      )}
-    </main>
+          {showMessage && (
+            <h3 className="border-2 border-red-500 bg-red-200 place-self-end mt-8 text-center">
+              {errorMessage}
+            </h3>
+          )}
+        </main>
+        {/* <PDFViewer> */}
+        {/* <PlanPDFGenerator selectedCourses={selectedCourses} /> */}
+        {/* </PDFViewer> */}
+        <Side />
+      </SelectedCoursesContext.Provider>
+    </div>
   );
 }
