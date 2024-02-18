@@ -45,8 +45,10 @@ export default function Term(props) {
   }
 
   return (
-    <div className="flex flex-col justify-between w-32 h-full">
-      <div>{shownCourses}</div>
+    <div className="flex flex-col justify-between w-1/2 h-full align-middle">
+      <div className="flex flex-col justify-between align-middle">
+        {shownCourses}
+      </div>
       <h4 className="text-center">{sumOfHours} </h4>
     </div>
   );

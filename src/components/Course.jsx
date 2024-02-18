@@ -49,7 +49,7 @@ export default function Course(props) {
 
   return (
     <button
-      className={`border-2 px-4 py-2 rounded-lg w-28 m-1  bg-${courseBackgroundColor} hover:bg-slate-300 duration-300`}
+      className={`border-2 px-2 py-2 rounded-lg w-24 m-1  bg-${courseBackgroundColor} hover:bg-slate-300 duration-300`}
       onClick={changeColorNew}
     >
       <h3>{props.courseName}</h3>
