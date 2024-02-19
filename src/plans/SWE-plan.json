@@ -1,0 +1,455 @@
+[
+  [
+    {
+      "name": "MATH 101",
+      "credits": 4,
+      "hasRecaitaiton": true,
+      "hasLab": false,
+      "PreRequisites": null,
+      "postRequisites": ["MATH 102"],
+      "preStanding": null,
+      "teachers": null
+    },
+    {
+      "name": "Eng 101",
+      "credits": 3,
+      "hasRecaitaiton": false,
+      "hasLab": false,
+      "PreRequisites": null,
+      "postRequisites": ["Eng 102"],
+      "preStanding": null,
+      "teachers": null
+    },
+    {
+      "name": "PE 101",
+      "credits": 1,
+      "hasRecaitaiton": false,
+      "hasLab": false,
+      "PreRequisites": null,
+      "postRequisites": null,
+      "preStanding": null,
+      "teachers": null
+    },
+    {
+      "name": "ICS 104",
+      "credits": 3,
+      "hasRecaitaiton": false,
+      "hasLab": true,
+      "PreRequisites": null,
+      "postRequisites": ["ISE 291", "ICS 108", "ICS 253", "COE 233"],
+      "preStanding": null,
+      "teachers": null
+    },
+    {
+      "name": "Phys 101",
+      "credits": 4,
+      "hasRecaitaiton": true,
+      "hasLab": false,
+      "PreRequisites": null,
+      "postRequisites": ["Phys 102"],
+      "preStanding": null,
+      "teachers": null
+    },
+    {
+      "name": "IAS 111",
+      "credits": 2,
+      "hasRecaitaiton": false,
+      "hasLab": false,
+      "PreRequisites": null,
+      "postRequisites": null,
+      "preStanding": null,
+      "teachers": null
+    }
+  ],
+  [
+    {
+      "name": "MATH 102",
+      "credits": 4,
+      "hasRecaitaiton": true,
+      "hasLab": false,
+      "PreRequisites": ["MATH 101"],
+      "postRequisites": ["MATH 201", "MATH 208", "STAT 319"],
+      "preStanding": null,
+      "teachers": null
+    },
+    {
+      "name": "Eng 102",
+      "credits": 3,
+      "hasRecaitaiton": false,
+      "hasLab": false,
+      "PreRequisites": ["Eng 101"],
+      "postRequisites": ["Eng 214"],
+      "preStanding": null,
+      "teachers": null
+    },
+    {
+      "name": "ICS 108",
+      "credits": 4,
+      "hasRecaitaiton": false,
+      "hasLab": true,
+      "PreRequisites": ["ICS 104"],
+      "postRequisites": ["SWE 206", "ICS 202", "ICS 343"],
+      "preStanding": null,
+      "teachers": null
+    },
+    {
+      "name": "Phys 102",
+      "credits": 4,
+      "hasRecaitaiton": true,
+      "hasLab": false,
+      "PreRequisites": ["Phys 101"],
+      "postRequisites": null,
+      "preStanding": null,
+      "teachers": null
+    },
+    {
+      "name": "IAS 121",
+      "credits": 2,
+      "hasRecaitaiton": false,
+      "hasLab": false,
+      "PreRequisites": null,
+      "postRequisites": null,
+      "preStanding": null,
+      "teachers": null
+    }
+  ],
+  [
+    {
+      "name": "MATH 201",
+      "credits": 4,
+      "hasRecaitaiton": false,
+      "hasLab": false,
+      "PreRequisites": ["MATH 102"],
+      "postRequisites": null,
+      "preStanding": null,
+      "teachers": null
+    },
+    {
+      "name": "ISE 291",
+      "credits": 3,
+      "hasRecaitaiton": false,
+      "hasLab": false,
+      "PreRequisites": ["ICS 104"],
+      "postRequisites": ["COE 292"],
+      "preStanding": null,
+      "teachers": null
+    },
+    {
+      "name": "SWE 206",
+      "credits": 3,
+      "hasRecaitaiton": false,
+      "hasLab": true,
+      "PreRequisites": ["ICS 108"],
+      "postRequisites": ["SWE 216", "SWE 316"],
+      "preStanding": null,
+      "teachers": null
+    },
+    {
+      "name": "ICS 202",
+      "credits": 4,
+      "hasRecaitaiton": false,
+      "hasLab": true,
+      "PreRequisites": ["ICS 108"],
+      "postRequisites": ["ICS 321"],
+      "preStanding": null,
+      "teachers": null
+    },
+    {
+      "name": "Chem 101",
+      "credits": 4,
+      "hasRecaitaiton": true,
+      "hasLab": false,
+      "PreRequisites": null,
+      "postRequisites": null,
+      "preStanding": null,
+      "teachers": null
+    },
+    {
+      "name": "IAS 212",
+      "credits": 2,
+      "hasRecaitaiton": false,
+      "hasLab": false,
+      "PreRequisites": null,
+      "postRequisites": null,
+      "preStanding": null,
+      "teachers": null
+    }
+  ],
+  [
+    {
+      "name": "MATH 208",
+      "credits": 4,
+      "hasRecaitaiton": false,
+      "hasLab": false,
+      "PreRequisites": ["MATH 102"],
+      "postRequisites": null,
+      "preStanding": null
+    },
+    {
+      "name": "COE 292",
+      "credits": 3,
+      "hasRecaitaiton": false,
+      "hasLab": null,
+      "PreRequisites": ["ISE 291"],
+      "postRequisites": null,
+      "preStanding": null,
+      "teachers": null
+    },
+    {
+      "name": "SWE 216",
+      "credits": 3,
+      "hasRecaitaiton": false,
+      "hasLab": false,
+      "PreRequisites": ["SWE 206"],
+      "postRequisites": ["SWE 326"],
+      "preStanding": null,
+      "teachers": null
+    },
+    {
+      "name": "ICS 253",
+      "credits": 3,
+      "hasRecaitaiton": false,
+      "hasLab": false,
+      "PreRequisites": ["ICS 104"],
+      "postRequisites": null,
+      "preStanding": null,
+      "teachers": null
+    },
+    {
+      "name": "COE 233",
+      "credits": 3,
+      "hasRecaitaiton": false,
+      "hasLab": false,
+      "PreRequisites": ["ICS 104"],
+      "postRequisites": ["ICS 433"],
+      "preStanding": null,
+      "teachers": null
+    }
+  ],
+  [
+    {
+      "name": "STAT 319",
+      "credits": 3,
+      "hasRecaitaiton": false,
+      "hasLab": true,
+      "PreRequisites": ["MATH 102"],
+      "postRequisites": ["SWE 439"],
+      "preStanding": null,
+      "teachers": null
+    },
+    {
+      "name": "SWE 316",
+      "credits": 3,
+      "hasRecaitaiton": false,
+      "hasLab": false,
+      "PreRequisites": ["SWE 206"],
+      "postRequisites": ["SWE 439", "SWE 411"],
+      "preStanding": null,
+      "teachers": null
+    },
+    {
+      "name": "ICS 321",
+      "credits": 3,
+      "hasRecaitaiton": false,
+      "hasLab": false,
+      "PreRequisites": ["ICS 202"],
+      "postRequisites": null,
+      "preStanding": null,
+      "teachers": null
+    },
+    {
+      "name": "ICS 343",
+      "credits": 4,
+      "hasRecaitaiton": false,
+      "hasLab": true,
+      "PreRequisites": ["ICS 108"],
+      "postRequisites": ["ICS 344"],
+      "preStanding": null,
+      "teachers": null
+    },
+    {
+      "name": "SWE 387",
+      "credits": 3,
+      "hasRecaitaiton": false,
+      "hasLab": false,
+      "PreRequisites": null,
+      "postRequisites": ["SWE 411"],
+      "preStanding": "junior",
+      "teachers": null
+    },
+    {
+      "name": "BUS 200",
+      "credits": 3,
+      "hasRecaitaiton": false,
+      "hasLab": false,
+      "PreRequisites": null,
+      "postRequisites": null,
+      "preStanding": null,
+      "teachers": null
+    }
+  ],
+  [
+    {
+      "name": "SWE 363",
+      "credits": 3,
+      "hasRecaitaiton": false,
+      "hasLab": false,
+      "PreRequisites": null,
+      "postRequisites": ["SWE 399"],
+      "preStanding": "junior",
+      "teachers": null
+    },
+    {
+      "name": "Eng 214",
+      "credits": 3,
+      "hasRecaitaiton": false,
+      "hasLab": false,
+      "PreRequisites": ["Eng 102"],
+      "postRequisites": ["CGS 392"],
+      "preStanding": null,
+      "teachers": null
+    },
+    {
+      "name": "SWE 326",
+      "credits": 3,
+      "hasRecaitaiton": false,
+      "hasLab": false,
+      "PreRequisites": ["SWE 216"],
+      "postRequisites": ["SWE 412"],
+      "preStanding": null,
+      "teachers": null
+    },
+    {
+      "name": "ICS 344",
+      "credits": 3,
+      "hasRecaitaiton": false,
+      "hasLab": false,
+      "PreRequisites": ["ICS 343"],
+      "postRequisites": null,
+      "preStanding": null,
+      "teachers": null
+    },
+    {
+      "name": "CGS 392",
+      "credits": 1,
+      "hasRecaitaiton": false,
+      "hasLab": false,
+      "PreRequisites": ["Eng 214"],
+      "postRequisites": null,
+      "preStanding": null,
+      "teachers": null
+    }
+  ],
+  [
+    {
+      "name": "SWE 399",
+      "credits": 0,
+      "hasRecaitaiton": false,
+      "hasLab": false,
+      "PreRequisites": ["ENG 214", "SWE 363"],
+      "postRequisites": null,
+      "preStanding": null,
+      "teachers": null
+    }
+  ],
+  [
+    {
+      "name": "SWE XXX",
+      "credits": 3,
+      "hasRecaitaiton": false,
+      "hasLab": false,
+      "PreRequisites": null,
+      "postRequisites": null,
+      "preStanding": null
+    },
+    {
+      "name": "SWE XXX",
+      "credits": 3,
+      "hasRecaitaiton": false,
+      "hasLab": false,
+      "PreRequisites": null,
+      "postRequisites": null,
+      "preStanding": null
+    },
+    {
+      "name": "SWE 439",
+      "credits": 3,
+      "hasRecaitaiton": false,
+      "hasLab": false,
+      "PreRequisites": ["STAT 319", "SWE 316"],
+      "postRequisites": null,
+      "preStanding": null,
+      "teachers": null
+    },
+    {
+      "name": "SWE 411",
+      "credits": 3,
+      "hasRecaitaiton": false,
+      "hasLab": true,
+      "PreRequisites": ["SWE 316", "SWE 387"],
+      "postRequisites": ["SWE 412"],
+      "preStanding": null,
+      "teachers": null
+    },
+    {
+      "name": "IAS xxx",
+      "credits": 2,
+      "hasRecaitaiton": false,
+      "hasLab": false,
+      "PreRequisites": null,
+      "postRequisites": null,
+      "preStanding": null,
+      "teachers": null
+    }
+  ],
+  [
+    {
+      "name": "SWE XXX",
+      "credits": 3,
+      "hasRecaitaiton": false,
+      "hasLab": false,
+      "PreRequisites": null,
+      "postRequisites": null,
+      "preStanding": null
+    },
+    {
+      "name": "SWE XXX",
+      "credits": 3,
+      "hasRecaitaiton": false,
+      "hasLab": false,
+      "PreRequisites": null,
+      "postRequisites": null,
+      "preStanding": null
+    },
+    {
+      "name": "SWE 412",
+      "credits": 2,
+      "hasRecaitaiton": false,
+      "hasLab": true,
+      "PreRequisites": ["SWE 411", "SWE 326"],
+      "postRequisites": null,
+      "preStanding": null,
+      "teachers": null
+    },
+    {
+      "name": "ICS 433",
+      "credits": 3,
+      "hasRecaitaiton": false,
+      "hasLab": false,
+      "PreRequisites": ["COE 233"],
+      "postRequisites": null,
+      "preStanding": null,
+      "teachers": null
+    },
+    {
+      "name": "GS xxx",
+      "credits": 3,
+      "hasRecaitaiton": false,
+      "hasLab": false,
+      "PreRequisites": null,
+      "postRequisites": null,
+      "preStanding": null,
+      "teachers": null
+    }
+  ]
+]

@@ -60,9 +60,9 @@ export default function ColorPalette(props) {
       </h3>
       <div className="grid grid-cols-4 gap-4 ">
         <h4></h4>
-        <h3 className="text-center">Term 1</h3>
-        <h3 className="text-center">Term 2</h3>
-        <h3 className="text-center">Summer</h3>
+        <h3 className="">Term 1</h3>
+        <h3 className="">Term 2</h3>
+        <h3 className="">Summer</h3>
         <h3 className="text-center">Freshman</h3>
         {colorBlocks[0]}
 

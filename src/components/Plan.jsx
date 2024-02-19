@@ -2,7 +2,7 @@ import "./output.css";
 import { useState, useEffect, useRef, useContext } from "react";
 import { SelectedCoursesContext } from "../contexts/CoursesContext";
 import Year from "./Year";
-import swePlanData from "../plans/SWEPlan.json";
+import swePlanData from "../plans/SWE-plan.json";
 import ColorPalette from "./ColorPalette";
 import Side from "./Side";
 import PlanPDFGenerator from "./PlanPDFGenerator";
@@ -71,7 +71,6 @@ export default function Plan() {
     }
 
     if (selectedTerm === "clear") {
-      console.log("slected ter m is cle ");
       setSelectedCourses((prevCourses) => {
         let updated = { ...prevCourses };
         let reached = false;
@@ -80,7 +79,6 @@ export default function Plan() {
             let currentTerm = updated[`${year}-${term}`];
             if (reached) {
               updated[`${year}-${term}`] = [];
-              console.log(updated);
             } else {
               for (let i = 0; i < currentTerm.length; i++) {
                 if (currentTerm[i]["name"] === courseName) {
@@ -92,20 +90,17 @@ export default function Plan() {
             }
           }
         }
-        console.log(updated);
         return { ...updated };
       });
       return;
     }
 
     // check for preRequisit
-
+    console.log("preReq", preRequisite);
     if (preRequisite) {
-      let preReqNames = [];
-      // console.log("preReq", preRequisite);
-      for (let i = 0; i < preRequisite.length; i++) {
-        preReqNames.push(preRequisite[i]["name"]);
-      }
+      let preReqNames = preRequisite;
+      console.log("preReq", preRequisite);
+
       // console.log(preReqNames);
 
       let currentTerm = parseInt(selectedTerm.split("-")[1]);

@@ -12,9 +12,9 @@ export default function Term(props) {
         hasLab={x.hasLab}
         hasRecitation={x.hasRecaitaiton}
         creditHours={x.credits}
-        Prerequisites={x.Prerequisites}
+        PreRequisites={x.PreRequisites}
         addCourse={() =>
-          props.handleAddCourse(x.name, x.credits, x.Prerequisites)
+          props.handleAddCourse(x.name, x.credits, x.PreRequisites)
         }
       />
     ));
@@ -26,12 +26,12 @@ export default function Term(props) {
         hasLab={courses.hasLab}
         hasRecitation={courses.hasRecaitaiton}
         creditHours={courses.credits}
-        Prerequisites={courses.Prerequisites}
+        PreRequisites={courses.PreRequisites}
         addCourse={() =>
           props.handleAddCourse(
             courses.name,
             courses.credits,
-            courses.Prerequisites
+            courses.PreRequisites
           )
         }
       />

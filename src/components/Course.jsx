@@ -43,6 +43,7 @@ export default function Course(props) {
   findColorFromTerm();
 
   function changeColorNew() {
+    console.log("preReq from course", props);
     props.addCourse();
     findColorFromTerm();
   }
