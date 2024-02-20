@@ -79,7 +79,7 @@ export default function PlanPDFGenerator(props) {
       </Page>
     </Document>
   );
-  console.log("meow", useContext(SelectedCoursesContext));
+
   return (
     <button className="border border-blue-500 text-blue-500 hover:text-white hover:bg-blue-500 font-bold py-2 px-4 rounded duration-300">
       <PDFDownloadLink document={currentDocument} fileName="somename.pdf">

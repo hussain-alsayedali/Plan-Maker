@@ -64,97 +64,63 @@ export default function Plan() {
     if (i === summerTermIndex - 2) years.push(summerYear);
     j++;
   }
+  function findAllPostRequisites(courseName) {
+    return findaAllPostRequisitesRecursive(courseName, []);
+  }
+
+  function findaAllPostRequisitesRecursive(courseName, postRequisites) {
+    let currentCourse = findCourse(courseName);
+    if (
+      currentCourse["postRequisites"] === null ||
+      currentCourse["postRequisites"].length === 0
+    ) {
+      return postRequisites;
+    }
+    for (let i = 0; i < currentCourse["postRequisites"].length; i++) {
+      postRequisites.push(currentCourse["postRequisites"][i]);
+      findaAllPostRequisitesRecursive(
+        currentCourse["postRequisites"][i],
+        postRequisites
+      );
+    }
+    return postRequisites;
+  }
+
+  function findCourse(courseName) {
+    for (let i = 0; i < planData.length; i++) {
+      let currentTerm = planData[i];
+      for (let j = 0; j < currentTerm.length; j++) {
+        if (courseName === currentTerm[j].name) {
+          return currentTerm[j];
+        }
+      }
+    }
+  }
 
   function addCourse(courseName, credits, preRequisite) {
+    console.log("post Reqs", findAllPostRequisites(courseName));
     if (!selectedTerm) {
       return;
     }
 
+    // if the selected term is clear
     if (selectedTerm === "clear") {
-      setSelectedCourses((prevCourses) => {
-        let updated = { ...prevCourses };
-        let reached = false;
-        for (let year = 0; year < 5; year++) {
-          for (let term = 0; term < 3; term++) {
-            let currentTerm = updated[`${year}-${term}`];
-            if (reached) {
-              updated[`${year}-${term}`] = [];
-            } else {
-              for (let i = 0; i < currentTerm.length; i++) {
-                if (currentTerm[i]["name"] === courseName) {
-                  currentTerm.splice(i, 1);
-                  updated[`${year}-${term}`] = currentTerm;
-                  reached = true;
-                }
-              }
-            }
-          }
-        }
-        return { ...updated };
-      });
+      clearCourseAndPostReqsAll(courseName);
       return;
     }
 
-    // check for preRequisit
-    console.log("preReq", preRequisite);
+    // check for preRequisi
     if (preRequisite) {
-      let preReqNames = preRequisite;
-      console.log("preReq", preRequisite);
-
-      // console.log(preReqNames);
-
-      let currentTerm = parseInt(selectedTerm.split("-")[1]);
-      let currentYear = parseInt(selectedTerm.split("-")[0]);
-
-      console.log("current term / year", currentTerm, currentYear);
-      for (let i = 0; i < preReqNames.length; i++) {
-        // let currentCourse = preReqNames[i]
-        for (let year = 0; year <= currentYear; year++) {
-          for (let term = 0; term < 3; term++) {
-            if (year === currentYear && term === currentTerm) break;
-            let currentTermCourses = selectedCourses[`${year}-${term}`];
-
-            for (let i = 0; i < currentTermCourses.length; i++) {
-              let currentsSelectedCourseName = currentTermCourses[i]["name"];
-              if (preReqNames.includes(currentsSelectedCourseName)) {
-                let indexOfCourse = preReqNames.indexOf(
-                  currentsSelectedCourseName
-                );
-                preReqNames.splice(indexOfCourse, 1);
-              }
-            }
-          }
-        }
-      }
-
-      const hasPreReq = preReqNames.length > 0;
-      if (hasPreReq) {
-        console.log("there is preReqfor this course", preReqNames);
-        updateErrorMessage(courseName, preReqNames);
+      let unmeetedPreReqs = findUnmeetedPreReqs(preRequisite);
+      if (unmeetedPreReqs.length > 0) {
+        console.log("there is preReqfor this course", unmeetedPreReqs);
+        updateErrorMessage(courseName, unmeetedPreReqs);
         return;
       }
     }
 
-    // if the course was selected in another term then remove it.
-
-    setSelectedCourses((prevCourses) => {
-      let updated = { ...prevCourses };
-      let updatedKeys = Object.keys(updated);
-
-      for (let i = 0; i < updatedKeys.length; i++) {
-        let prevTermList = updated[updatedKeys[i]];
-        for (let j = 0; j < prevTermList.length; j++) {
-          if (prevTermList[j]["name"] === courseName) {
-            prevTermList.splice(j, 1);
-            break;
-          }
-        }
-        updated[updatedKeys[i]] = prevTermList;
-      }
-      return updated;
-    });
-
-    // console.log("clicked add course " + courseName);
+    // if the course was selected in another term then remove it. and remove all PostReqs that was before the selected Term
+    clearCourseAndPostReqsAll(courseName);
 
     // add the course
     setSelectedCourses((prevCourses) => {
@@ -168,8 +134,57 @@ export default function Plan() {
     });
   }
 
+  // add Course Functions
+
+  function clearCourseAndPostReqsAll(courseName) {
+    setSelectedCourses((prevCourses) => {
+      let updated = { ...prevCourses };
+      let postReqs = findAllPostRequisites(courseName);
+      postReqs.push(courseName);
+      console.log(postReqs);
+      for (let year = 0; year < 5; year++) {
+        for (let term = 0; term < 3; term++) {
+          let currentTerm = updated[`${year}-${term}`];
+          for (let i = currentTerm.length - 1; i >= 0; i--) {
+            if (postReqs.includes(currentTerm[i]["name"])) {
+              console.log("found deleted", currentTerm[i]["name"]);
+              currentTerm.splice(i, 1);
+              updated[`${year}-${term}`] = currentTerm;
+            }
+          }
+        }
+      }
+      return { ...updated };
+    });
+  }
+  function findUnmeetedPreReqs(preReqs) {
+    let preReqNames = preReqs;
+
+    let currentTerm = parseInt(selectedTerm.split("-")[1]);
+    let currentYear = parseInt(selectedTerm.split("-")[0]);
+
+    for (let i = 0; i < preReqNames.length; i++) {
+      for (let year = 0; year <= currentYear; year++) {
+        for (let term = 0; term < 3; term++) {
+          if (year === currentYear && term === currentTerm) break;
+          let currentTermCourses = selectedCourses[`${year}-${term}`];
+
+          for (let i = 0; i < currentTermCourses.length; i++) {
+            let currentsSelectedCourseName = currentTermCourses[i]["name"];
+            if (preReqNames.includes(currentsSelectedCourseName)) {
+              let indexOfCourse = preReqNames.indexOf(
+                currentsSelectedCourseName
+              );
+              preReqNames.splice(indexOfCourse, 1);
+            }
+          }
+        }
+      }
+    }
+    return preReqNames;
+  }
+
   function changeSelectedTerm(term) {
-    // console.log("clicked change term");
     setSelectedTerm(term);
   }
 

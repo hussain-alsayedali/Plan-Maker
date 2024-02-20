@@ -1,8 +1,6 @@
 import "./output.css";
 
 export default function ColorBlock(props) {
-  console.log(props.selected);
-
   return (
     <div
       className={` ${

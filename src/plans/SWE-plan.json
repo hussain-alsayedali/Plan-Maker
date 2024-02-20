@@ -346,7 +346,7 @@
       "credits": 0,
       "hasRecaitaiton": false,
       "hasLab": false,
-      "PreRequisites": ["ENG 214", "SWE 363"],
+      "PreRequisites": ["Eng 214", "SWE 363"],
       "postRequisites": null,
       "preStanding": null,
       "teachers": null
@@ -354,7 +354,7 @@
   ],
   [
     {
-      "name": "SWE XXX",
+      "name": "SWE XXX-1",
       "credits": 3,
       "hasRecaitaiton": false,
       "hasLab": false,
@@ -363,7 +363,7 @@
       "preStanding": null
     },
     {
-      "name": "SWE XXX",
+      "name": "SWE XXX-2",
       "credits": 3,
       "hasRecaitaiton": false,
       "hasLab": false,
@@ -404,7 +404,7 @@
   ],
   [
     {
-      "name": "SWE XXX",
+      "name": "SWE XXX-3",
       "credits": 3,
       "hasRecaitaiton": false,
       "hasLab": false,
@@ -413,7 +413,7 @@
       "preStanding": null
     },
     {
-      "name": "SWE XXX",
+      "name": "SWE XXX-4",
       "credits": 3,
       "hasRecaitaiton": false,
       "hasLab": false,
