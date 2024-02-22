@@ -1,0 +1,488 @@
+[
+  [
+    {
+      "name": "Chem 101",
+      "credits": 4,
+      "hasRecaitaiton": true,
+      "hasLab": false,
+      "PreRequisites": null,
+      "postRequisites": ["ME 216", "ME 217"],
+      "preStanding": null
+    },
+    {
+      "name": "Eng 101",
+      "credits": 3,
+      "hasRecaitaiton": false,
+      "hasLab": false,
+      "PreRequisites": null,
+      "postRequisites": ["Eng 102"],
+      "preStanding": null
+    },
+    {
+      "name": "MATH 101",
+      "credits": 4,
+      "hasRecaitaiton": true,
+      "hasLab": false,
+      "PreRequisites": null,
+      "postRequisites": ["MATH 102"],
+      "preStanding": null
+    },
+    {
+      "name": "Phys 101",
+      "credits": 4,
+      "hasRecaitaiton": true,
+      "hasLab": false,
+      "PreRequisites": null,
+      "postRequisites": ["Phys 102", "CE 202"],
+      "preStanding": null
+    },
+    {
+      "name": "IAS 121",
+      "credits": 2,
+      "hasRecaitaiton": false,
+      "hasLab": false,
+      "PreRequisites": null,
+      "postRequisites": null,
+      "preStanding": null
+    },
+    {
+      "name": "PE 101",
+      "credits": 1,
+      "hasRecaitaiton": false,
+      "hasLab": false,
+      "PreRequisites": null,
+      "postRequisites": null,
+      "preStanding": null
+    }
+  ],
+  [
+    {
+      "name": "Eng 102",
+      "credits": 3,
+      "hasRecaitaiton": false,
+      "hasLab": false,
+      "PreRequisites": ["Eng 101"],
+      "postRequisites": ["Eng 214"],
+      "preStanding": null
+    },
+    {
+      "name": "ICS 104",
+      "credits": 3,
+      "hasRecaitaiton": false,
+      "hasLab": true,
+      "PreRequisites": null,
+      "postRequisites": ["ISE 291"],
+      "preStanding": null
+    },
+    {
+      "name": "MATH 102",
+      "credits": 4,
+      "hasRecaitaiton": true,
+      "hasLab": false,
+      "PreRequisites": ["MATH 101"],
+      "postRequisites": [
+        "MATH 201",
+        "MATH 208",
+        "STAT 319",
+        "EE 234",
+        "EE 235",
+        "ME 203",
+        "ME 216",
+        "ME 217"
+      ],
+      "preStanding": null
+    },
+    {
+      "name": "Phys 102",
+      "credits": 4,
+      "hasRecaitaiton": true,
+      "hasLab": false,
+      "PreRequisites": ["Phys 101"],
+      "postRequisites": ["ME 218", "ME 203", "EE 234", "EE 235"],
+      "preStanding": null
+    },
+    {
+      "name": "IAS 111",
+      "credits": 2,
+      "hasRecaitaiton": false,
+      "hasLab": false,
+      "PreRequisites": null,
+      "postRequisites": ["IAS 212"],
+      "preStanding": null
+    }
+  ],
+  [
+    {
+      "name": "CE 202",
+      "credits": 3,
+      "hasRecaitaiton": false,
+      "hasLab": false,
+      "PreRequisites": ["Phys 101"],
+      "postRequisites": ["ME 301", "ME 201"],
+      "preStanding": null
+    },
+    {
+      "name": "MATH 201",
+      "credits": 4,
+      "hasRecaitaiton": false,
+      "hasLab": false,
+      "PreRequisites": ["MATH 102"],
+      "postRequisites": ["ME 311", "MATH 371"],
+      "preStanding": null
+    },
+    {
+      "name": "ME 203",
+      "credits": 3,
+      "hasRecaitaiton": false,
+      "hasLab": false,
+      "PreRequisites": ["Phys 102", "MATH 102"],
+      "postRequisites": ["ME 204", "ME 311"],
+      "preStanding": null
+    },
+    {
+      "name": "ME 210",
+      "credits": 3,
+      "hasRecaitaiton": false,
+      "hasLab": false,
+      "PreRequisites": null,
+      "postRequisites": ["ME 218", "ME 322", "ME 323"],
+      "preStanding": null
+    },
+    {
+      "name": "ME 216",
+      "credits": 3,
+      "hasRecaitaiton": false,
+      "hasLab": false,
+      "PreRequisites": ["Chem 101", "MATH 102"],
+      "postRequisites": ["ME 322", "ME 323"],
+      "preStanding": null
+    },
+    {
+      "name": "ME 217",
+      "credits": 1,
+      "hasRecaitaiton": false,
+      "hasLab": false,
+      "PreRequisites": ["Chem 101", "MATH 102"],
+      "postRequisites": ["ME 322", "ME 323"],
+      "preStanding": null
+    }
+  ],
+  [
+    {
+      "name": "Eng 214",
+      "credits": 3,
+      "hasRecaitaiton": false,
+      "hasLab": false,
+      "PreRequisites": ["Eng 102"],
+      "postRequisites": ["CGS 392", "ME 399"],
+      "preStanding": null
+    },
+    {
+      "name": "ISE 291",
+      "credits": 3,
+      "hasRecaitaiton": false,
+      "hasLab": false,
+      "PreRequisites": ["ICS 104"],
+      "postRequisites": ["COE 292"],
+      "preStanding": null
+    },
+    {
+      "name": "MATH 208",
+      "credits": 4,
+      "hasRecaitaiton": false,
+      "hasLab": false,
+      "PreRequisites": ["MATH 102"],
+      "postRequisites": ["ME 401", "ME 402"],
+      "preStanding": null
+    },
+    {
+      "name": "ME 204",
+      "credits": 3,
+      "hasRecaitaiton": false,
+      "hasLab": false,
+      "PreRequisites": ["ME 203"],
+      "postRequisites": ["ME 315", "ME 316", "ME 399"],
+      "preStanding": null
+    },
+    {
+      "name": "ME 201",
+      "credits": 3,
+      "hasRecaitaiton": false,
+      "hasLab": false,
+      "PreRequisites": ["CE 202"],
+      "postRequisites": ["ME 311"],
+      "preStanding": null
+    },
+    {
+      "name": "ME 218",
+      "credits": 2,
+      "hasRecaitaiton": false,
+      "hasLab": false,
+      "PreRequisites": ["Phys 102", "ME 210"],
+      "postRequisites": ["ME 301"],
+      "preStanding": null
+    }
+  ],
+  [
+    {
+      "name": "COE 292",
+      "credits": 3,
+      "hasRecaitaiton": false,
+      "hasLab": null,
+      "PreRequisites": ["ISE 291"],
+      "postRequisites": null,
+      "preStanding": null
+    },
+    {
+      "name": "EE 234",
+      "credits": 3,
+      "hasRecaitaiton": false,
+      "hasLab": false,
+      "PreRequisites": ["MATH 102", "Phys 102"],
+      "postRequisites": ["ME 401", "ME 402"],
+      "preStanding": null
+    },
+    {
+      "name": "EE 235",
+      "credits": 1,
+      "hasRecaitaiton": false,
+      "hasLab": false,
+      "PreRequisites": ["MATH 102", "Phys 102"],
+      "postRequisites": ["ME 401", "ME 402"],
+      "preStanding": null
+    },
+    {
+      "name": "ME 301",
+      "credits": 3,
+      "hasRecaitaiton": false,
+      "hasLab": false,
+      "PreRequisites": ["CE 202", "ME 218"],
+      "postRequisites": ["ME 302", "ME 303"],
+      "preStanding": null
+    },
+    {
+      "name": "ME 311",
+      "credits": 3,
+      "hasRecaitaiton": false,
+      "hasLab": false,
+      "PreRequisites": ["MATH 201", "ME 201", "ME 203"],
+      "postRequisites": ["ME 315", "ME 316"],
+      "preStanding": null
+    },
+    {
+      "name": "ME 322",
+      "credits": 3,
+      "hasRecaitaiton": false,
+      "hasLab": false,
+      "PreRequisites": ["ME 210", "ME 216", "ME 217"],
+      "postRequisites": null,
+      "preStanding": null
+    },
+    {
+      "name": "ME 323",
+      "credits": 1,
+      "hasRecaitaiton": false,
+      "hasLab": false,
+      "PreRequisites": ["ME 210", "ME 216", "ME 217"],
+      "postRequisites": null,
+      "preStanding": null
+    }
+  ],
+  [
+    {
+      "name": "BUS 200",
+      "credits": 3,
+      "hasRecaitaiton": false,
+      "hasLab": false,
+      "PreRequisites": null,
+      "postRequisites": ["ME 399", "ME 411"],
+      "preStanding": null
+    },
+    {
+      "name": "CGS 392",
+      "credits": 1,
+      "hasRecaitaiton": false,
+      "hasLab": false,
+      "PreRequisites": ["Eng 214"],
+      "postRequisites": null,
+      "preStanding": null
+    },
+    {
+      "name": "IAS 212",
+      "credits": 2,
+      "hasRecaitaiton": false,
+      "hasLab": false,
+      "PreRequisites": ["IAS 111"],
+      "postRequisites": ["IAS xxx"],
+      "preStanding": null
+    },
+    {
+      "name": "STAT 319",
+      "credits": 3,
+      "hasRecaitaiton": false,
+      "hasLab": true,
+      "PreRequisites": ["MATH 102"],
+      "postRequisites": null,
+      "preStanding": null
+    },
+    {
+      "name": "ME 302",
+      "credits": 3,
+      "hasRecaitaiton": false,
+      "hasLab": false,
+      "PreRequisites": ["ME 301"],
+      "postRequisites": null,
+      "preStanding": null
+    },
+    {
+      "name": "ME 303",
+      "credits": 1,
+      "hasRecaitaiton": false,
+      "hasLab": false,
+      "PreRequisites": ["ME 301"],
+      "postRequisites": null,
+      "preStanding": null
+    },
+    {
+      "name": "ME 315",
+      "credits": 3,
+      "hasRecaitaiton": false,
+      "hasLab": false,
+      "PreRequisites": ["ME 204", "ME 311"],
+      "postRequisites": ["ME 401", "ME 402", "ME 411"],
+      "preStanding": null
+    },
+    {
+      "name": "ME 316",
+      "credits": 1,
+      "hasRecaitaiton": false,
+      "hasLab": false,
+      "PreRequisites": ["ME 204", "ME 311"],
+      "postRequisites": ["ME 401", "ME 402", "ME 411"],
+      "preStanding": null
+    }
+  ],
+  [
+    {
+      "name": "ME 399",
+      "credits": 0,
+      "hasRecaitaiton": false,
+      "hasLab": false,
+      "PreRequisites": ["BUS 200", "Eng 214", "ME 204"],
+      "postRequisites": null,
+      "preStanding": null
+    }
+  ],
+  [
+    {
+      "name": "MATH 371",
+      "credits": 3,
+      "hasRecaitaiton": false,
+      "hasLab": false,
+      "PreRequisites": ["MATH 201"],
+      "postRequisites": null,
+      "preStanding": null
+    },
+    {
+      "name": "ME 401",
+      "credits": 3,
+      "hasRecaitaiton": false,
+      "hasLab": false,
+      "PreRequisites": ["EE 234", "EE 235", "MATH 208", "ME 315", "ME 316"],
+      "postRequisites": null,
+      "preStanding": null
+    },
+    {
+      "name": "ME 402",
+      "credits": 3,
+      "hasRecaitaiton": false,
+      "hasLab": false,
+      "PreRequisites": ["EE 234", "EE 235", "MATH 208", "ME 315", "ME 316"],
+      "postRequisites": null,
+      "preStanding": null
+    },
+    {
+      "name": "ME 411",
+      "credits": 0,
+      "hasRecaitaiton": false,
+      "hasLab": false,
+      "PreRequisites": ["BUS 200", "ME 315", "ME 316"],
+      "postRequisites": ["ME 412"],
+      "preStanding": null
+    },
+    {
+      "name": "ME 412",
+      "credits": 3,
+      "hasRecaitaiton": false,
+      "hasLab": false,
+      "PreRequisites": ["ME 411"],
+      "postRequisites": null,
+      "preStanding": null
+    },
+    {
+      "name": "ME 4xx-1",
+      "credits": 3,
+      "hasRecaitaiton": false,
+      "hasLab": false,
+      "PreRequisites": null,
+      "postRequisites": null,
+      "preStanding": null
+    },
+    {
+      "name": "ME 4xx-2",
+      "credits": 3,
+      "hasRecaitaiton": false,
+      "hasLab": false,
+      "PreRequisites": null,
+      "postRequisites": null,
+      "preStanding": null
+    }
+  ],
+  [
+    {
+      "name": "GS xxx",
+      "credits": 3,
+      "hasRecaitaiton": false,
+      "hasLab": false,
+      "PreRequisites": null,
+      "postRequisites": null,
+      "preStanding": null
+    },
+    {
+      "name": "IAS xxx",
+      "credits": 2,
+      "hasRecaitaiton": false,
+      "hasLab": false,
+      "PreRequisites": ["IAS 212"],
+      "postRequisites": null,
+      "preStanding": null
+    },
+    {
+      "name": "ME 412",
+      "credits": 3,
+      "hasRecaitaiton": false,
+      "hasLab": false,
+      "PreRequisites": ["ME 411"],
+      "postRequisites": null,
+      "preStanding": null
+    },
+    {
+      "name": "ME 4xx-3",
+      "credits": 3,
+      "hasRecaitaiton": false,
+      "hasLab": false,
+      "PreRequisites": null,
+      "postRequisites": null,
+      "preStanding": null
+    },
+    {
+      "name": "ME 4xx-4",
+      "credits": 3,
+      "hasRecaitaiton": false,
+      "hasLab": false,
+      "PreRequisites": null,
+      "postRequisites": null,
+      "preStanding": null
+    }
+  ]
+]

@@ -16,10 +16,10 @@ for (let year = 0; year < 5; year++) {
   }
 }
 
-export default function Plan() {
+export default function Plan(props) {
   const [selectedTerm, setSelectedTerm] = useState("");
   const [selectedCourses, setSelectedCourses] = useState(
-    JSON.parse(localStorage.getItem("selectedCourses")) ||
+    JSON.parse(localStorage.getItem(`${props.major}-selectedCourses`)) ||
       InitializeCoursesObject
   );
 
@@ -39,7 +39,8 @@ export default function Plan() {
     return () => clearTimeout(timer);
   }, [showMessage]);
 
-  let planData = swePlanData;
+  let planData = props.plan;
+  console.log(planData);
   const summerTermIndex = 6;
   let summerYear = (
     <Year
@@ -198,7 +199,10 @@ export default function Plan() {
   }
 
   useEffect(() => {
-    localStorage.setItem("selectedCourses", JSON.stringify(selectedCourses));
+    localStorage.setItem(
+      `${props.major}-selectedCourses`,
+      JSON.stringify(selectedCourses)
+    );
   }, [selectedCourses]);
 
   return (

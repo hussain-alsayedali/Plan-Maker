@@ -3,43 +3,45 @@ import Course from "./Course";
 
 export default function Term(props) {
   const courses = props.courses;
+  console.log(
+    "courses from term",
+    courses,
+    "yearnum",
+    props.yearNum,
+    "termNum",
+    props.termNum
+  );
   let shownCourses;
   if (Array.isArray(courses)) {
-    shownCourses = courses.map((x, i) => (
-      <Course
-        key={`${x.name}-${props.termNum}-${i}`}
-        courseName={x.name}
-        hasLab={x.hasLab}
-        hasRecitation={x.hasRecaitaiton}
-        creditHours={x.credits}
-        PreRequisites={x.PreRequisites}
-        // postRequisites={x.postRequisites}
-        addCourse={() =>
-          props.handleAddCourse(
-            x.name,
-            x.credits,
-            x.PreRequisites
-            // x.postRequisites
-          )
-        }
-      />
-    ));
+    shownCourses = courses
+      .filter((x) => x !== null)
+      .map((x, i) => (
+        <Course
+          key={`${x.name}-${props.termNum}-${i}`}
+          courseName={x.name}
+          hasLab={x.hasLab}
+          hasRecitation={x.hasRecitation}
+          creditHours={x.credits}
+          PreRequisites={x.PreRequisites}
+          addCourse={() =>
+            props.handleAddCourse(x.name, x.credits, x.PreRequisites)
+          }
+        />
+      ));
   } else {
     shownCourses = (
       <Course
         key={courses.name}
         courseName={courses.name}
         hasLab={courses.hasLab}
-        hasRecitation={courses.hasRecaitaiton}
+        hasRecitation={courses.hasRecitation}
         creditHours={courses.credits}
-        // postRequisites={courses.postRequisites}
         preRequisites={courses.PreRequisites}
         addCourse={() =>
           props.handleAddCourse(
             courses.name,
             courses.credits,
             courses.PreRequisites
-            // courses.postRequisites
           )
         }
       />
