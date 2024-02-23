@@ -2,6 +2,7 @@
 
 Creating plan for college is a hard task, this website would make it Easy (●'◡'●)
 
+<img src="./plan img.PNG" />
 **Link to project:** https://plan-maker.netlify.app/
 
 ![alt tag](https://plan-maker.netlify.app/)
