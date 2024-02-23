@@ -1,8 +1,19 @@
-# React + Vite
+# Plan-Maker
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Creating plan for college is a hard task, this website would make it Easy (●'◡'●)
 
-Currently, two official plugins are available:
+**Link to project:** https://plan-maker.netlify.app/
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+![alt tag](https://plan-maker.netlify.app/)
+
+## How It's Made:
+
+**Tech used:** ReactJS, Vite , Tailwind , NodeJS
+
+I selected this tech stack due to its seamless integration and the immense potential it offers.
+
+## Lessons Learned:
+
+This project was developed to strengthen my ReactJS skills and to create a tool that eases the life of students.
+
+I gained substantial knowledge in React, including useState, useEffect, and useContext, and learned how to optimize code efficiency.
