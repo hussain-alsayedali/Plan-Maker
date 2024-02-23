@@ -5,8 +5,6 @@ Creating plan for college is a hard task, this website would make it Easy (‚óè'‚
 <img src="./plan img.PNG" />
 **Link to project:** https://plan-maker.netlify.app/
 
-![alt tag](https://plan-maker.netlify.app/)
-
 ## How It's Made:
 
 **Tech used:** ReactJS, Vite , Tailwind , NodeJS
