@@ -112,6 +112,7 @@ export default function Plan(props) {
 
     // check for preRequisi
     if (preRequisite) {
+      console.log("entered pre Requisite", preRequisite);
       let unmeetedPreReqs = findUnmeetedPreReqs(preRequisite);
       if (unmeetedPreReqs.length > 0) {
         console.log("there is preReqfor this course", unmeetedPreReqs);
@@ -164,24 +165,21 @@ export default function Plan(props) {
     let currentTerm = parseInt(selectedTerm.split("-")[1]);
     let currentYear = parseInt(selectedTerm.split("-")[0]);
 
-    for (let i = 0; i < preReqNames.length; i++) {
-      for (let year = 0; year <= currentYear; year++) {
-        for (let term = 0; term < 3; term++) {
-          if (year === currentYear && term === currentTerm) break;
-          let currentTermCourses = selectedCourses[`${year}-${term}`];
+    for (let year = 0; year <= currentYear; year++) {
+      for (let term = 0; term < 3; term++) {
+        if (year === currentYear && term === currentTerm) break;
+        let currentTermCourses = selectedCourses[`${year}-${term}`];
 
-          for (let i = 0; i < currentTermCourses.length; i++) {
-            let currentsSelectedCourseName = currentTermCourses[i]["name"];
-            if (preReqNames.includes(currentsSelectedCourseName)) {
-              let indexOfCourse = preReqNames.indexOf(
-                currentsSelectedCourseName
-              );
-              preReqNames.splice(indexOfCourse, 1);
-            }
+        for (let i = 0; i < currentTermCourses.length; i++) {
+          let currentsSelectedCourseName = currentTermCourses[i]["name"];
+          if (preReqNames.includes(currentsSelectedCourseName)) {
+            let indexOfCourse = preReqNames.indexOf(currentsSelectedCourseName);
+            preReqNames.splice(indexOfCourse, 1);
           }
         }
       }
     }
+
     return preReqNames;
   }
 

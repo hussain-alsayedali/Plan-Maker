@@ -58,7 +58,7 @@ export default function ColorPalette(props) {
       <h3 className="text-center">
         Select <FontAwesomeIcon icon={faPalette} />
       </h3>
-      <div className="grid grid-cols-4 gap-4 ">
+      <div className="grid grid-cols-4 gap-2  ">
         <h4></h4>
         <h3 className="">Term 1</h3>
         <h3 className="">Term 2</h3>

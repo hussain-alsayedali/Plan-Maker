@@ -3,14 +3,7 @@ import Course from "./Course";
 
 export default function Term(props) {
   const courses = props.courses;
-  console.log(
-    "courses from term",
-    courses,
-    "yearnum",
-    props.yearNum,
-    "termNum",
-    props.termNum
-  );
+
   let shownCourses;
   if (Array.isArray(courses)) {
     shownCourses = courses
@@ -53,10 +46,12 @@ export default function Term(props) {
       sumOfHours += parseInt(courses[i].credits);
     }
   }
-
+  let width = Array.isArray(courses) ? "w-1/2" : "w-full";
   return (
-    <div className="flex flex-col justify-between w-1/2 h-full align-middle">
-      <div className="flex flex-col justify-between align-middle">
+    <div
+      className={`flex flex-col justify-between ${width} h-full align-middle`}
+    >
+      <div className="flex flex-col justify-center align-middle items-center ">
         {shownCourses}
       </div>
       <h4 className="text-center">{sumOfHours} </h4>

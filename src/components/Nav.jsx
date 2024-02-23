@@ -4,6 +4,9 @@ import { Link } from "react-router-dom";
 const Nav = ({ names }) => {
   return (
     <nav className=" h-screen">
+      <h1 className="text-center text-3xl font-bold p-4 mt-8 text-sky-400">
+        Choose Your Plan
+      </h1>
       <ul className="grid grid-cols-3 gap-1 justify-center justify-items-center content-center h-full ">
         {names.map((name, index) => (
           <li className="w-40" key={index}>

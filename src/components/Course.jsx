@@ -6,11 +6,11 @@ import { faComputer } from "@fortawesome/free-solid-svg-icons";
 import { faPen } from "@fortawesome/free-solid-svg-icons";
 
 const colors = {
-  0: ["red-100", "zinc-100", "yellow-100"],
-  1: ["orange-200", "teal-200", "cyan-200"],
-  2: ["rose-300", "pink-300", "fuchsia-300"],
-  3: ["violet-400", "emerald-400", "stone-400"],
-  4: ["indigo-500", "sky-500", "lime-500"],
+  0: ["bg-red-100", "bg-zinc-100", "bg-yellow-100"],
+  1: ["bg-orange-200", "bg-teal-200", "bg-cyan-200"],
+  2: ["bg-rose-300", "bg-pink-300", "bg-fuchsia-300"],
+  3: ["bg-violet-400", "bg-emerald-400", "bg-stone-400"],
+  4: ["bg-indigo-500", "bg-sky-500", "bg-lime-500"],
 };
 
 export default function Course(props) {
@@ -50,7 +50,7 @@ export default function Course(props) {
 
   return (
     <button
-      className={`border-2 px-2 py-2 rounded-lg w-24 m-1  bg-${courseBackgroundColor} hover:bg-slate-300 duration-300`}
+      className={`border-2 px-2 py-2 rounded-lg w-24 m-1  ${courseBackgroundColor} hover:bg-slate-300 duration-300 max-md:w-3/4 `}
       onClick={changeColorNew}
     >
       <h3>{props.courseName}</h3>

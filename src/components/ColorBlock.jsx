@@ -6,7 +6,7 @@ export default function ColorBlock(props) {
       className={` ${
         props.width ? "w-full" : "w-12"
       } hover:bg-slate-400 rounded duration-300 ${
-        props.selected && "bg-red-500"
+        props.selected && "bg-sky-500"
       } `}
       onClick={props.handleChange}
     >
