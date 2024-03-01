@@ -14,7 +14,7 @@ export default function Side(props) {
     });
   };
   return (
-    <aside className="flex justify-center align-middle mt-10">
+    <aside className="flex justify-center align-middle mt-10 max-md:mb-12">
       <button
         onClick={capturePlan}
         className="border border-blue-500 text-blue-500 hover:text-white hover:bg-blue-500 font-bold py-2 px-4 rounded duration-300 mr-6"

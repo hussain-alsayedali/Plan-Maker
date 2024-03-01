@@ -856,12 +856,20 @@ video {
 }
 
 @media not all and (min-width: 768px) {
+  .max-md\:mb-12 {
+    margin-bottom: 3rem;
+  }
+
   .max-md\:mt-6 {
     margin-top: 1.5rem;
   }
 
   .max-md\:w-3\/4 {
     width: 75%;
+  }
+
+  .max-md\:grid-cols-1 {
+    grid-template-columns: repeat(1, minmax(0, 1fr));
   }
 
   .max-md\:flex-col {
